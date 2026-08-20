@@ -202,10 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. About Me Section
-    aboutBioText.textContent = profile.about_bio;
-    languageText.textContent = profile.languages || '';
-    aboutEmail.textContent = profile.contact.email;
-    aboutInstagram.textContent = profile.contact.instagram;
+    if (aboutBioText) aboutBioText.textContent = profile.about_bio;
+    if (languageText) languageText.textContent = profile.languages || '';
+    if (aboutEmail) aboutEmail.textContent = profile.contact.email;
+    if (aboutInstagram) aboutInstagram.textContent = profile.contact.instagram;
 
     // Education Timeline
     educationTimeline.innerHTML = '';
@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3 class="cert-title">${cert.title}</h3>
           <h4 class="cert-issuer">${cert.issuer}</h4>
           <p class="cert-desc">${cert.description}</p>
-          <a class="cert-read-more">Lihat Sertifikat <i class="fa-solid fa-arrow-right-long"></i></a>
+          <a class="cert-read-more">View Credential <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
       `;
       
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = document.getElementById('contactMessage').value;
         
         const mailtoUrl = `mailto:${profile.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-          `Nama Pengirim: ${name}\nEmail Pengirim: ${email}\n\nPesan:\n${message}`
+          `Sender Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`
         )}`;
         
         window.location.href = mailtoUrl;
@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectsGrid.innerHTML = '';
     
     if (projects.length === 0) {
-      projectsGrid.innerHTML = `<p class="text-center" style="grid-column: 1/-1;">Belum ada proyek untuk kategori ini.</p>`;
+      projectsGrid.innerHTML = `<p class="text-center" style="grid-column: 1/-1;">No projects found in this category.</p>`;
       return;
     }
 
@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3 class="project-card-title">${project.title}</h3>
           <p class="project-desc-excerpt">${project.description}</p>
           <div class="project-tools-list">${toolsHTML}</div>
-          <a class="project-read-more">Lihat Detail <i class="fa-solid fa-arrow-right-long"></i></a>
+          <a class="project-read-more">View Details <i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
       `;
 
@@ -475,8 +475,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function openCertLightbox(cert) {
     lightboxImg.src = cert.image;
     lightboxImg.alt = cert.title;
-    lightboxCategory.textContent = "Sertifikasi";
-    lightboxDate.innerHTML = `<i class="fa-regular fa-calendar"></i> Tahun ${cert.year}`;
+    lightboxCategory.textContent = "Certification Credential";
+    lightboxDate.innerHTML = `<i class="fa-regular fa-calendar"></i> Year: ${cert.year}`;
     lightboxTitle.textContent = cert.title;
     lightboxDesc.textContent = cert.description;
     lightboxToolsList.innerHTML = `<span class="project-tool-tag">${cert.issuer}</span>`;

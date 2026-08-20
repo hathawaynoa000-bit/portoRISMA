@@ -562,6 +562,20 @@ body.dark-theme .theme-toggle {
   border-color: rgba(255, 92, 138, 0.25);
 }
 
+body.dark-theme .btn-primary {
+  background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-hover) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(255, 117, 143, 0.35);
+}
+
+body.dark-theme .btn-primary:hover {
+  background: linear-gradient(135deg, var(--pink-accent-hover) 0%, var(--pink-accent) 100%);
+  box-shadow: 0 12px 30px rgba(255, 117, 143, 0.5);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
 .btn-secondary {
   background: var(--glass-bg);
   color: var(--navy-deep);
@@ -571,7 +585,9 @@ body.dark-theme .theme-toggle {
 }
 
 body.dark-theme .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 .btn-secondary:hover {
@@ -579,6 +595,12 @@ body.dark-theme .btn-secondary {
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 8px 20px rgba(255, 92, 138, 0.08);
+}
+
+body.dark-theme .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -833,55 +855,39 @@ body.dark-theme .sparkle-green {
 }
 
 /* ==========================================================================
-   ABOUT ME SECTION
+   ABOUT ME SECTION (Single Centered Card with Justified Alignment)
    ========================================================================== */
-.about-grid-simple {
-  max-width: 1100px;
+.about-single-wrapper {
+  max-width: 920px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 30px;
 }
 
 .about-card {
-  height: 100%;
+  padding: 40px 45px;
+  width: 100%;
+}
+
+.about-card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .about-card h3 {
   font-size: 1.4rem;
   font-weight: 700;
-}
-
-.about-card p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 0; /* Clear bottom margin since it has its own card now */
-}
-
-.personal-info-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 25px;
-}
-
-.info-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
   color: var(--navy-deep);
-  transition: var(--transition-smooth);
 }
 
-body.dark-theme .info-pill {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.05);
+.about-bio-text,
+.about-card p {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  text-align: justify;
+  text-justify: inter-word;
+  color: var(--text-dark);
+  margin-bottom: 0;
 }
 
 .info-pill i {
@@ -1227,27 +1233,29 @@ body.dark-theme .project-tool-tag {
 }
 
 /* ==========================================================================
-   PENGALAMAN / EXPERIENCE SECTION (3 Columns Grid)
+   PENGALAMAN / EXPERIENCE SECTION (Vertical Stack List)
    ========================================================================== */
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.experience-stack {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   gap: 30px;
-  align-items: start;
 }
 
 .timeline-block {
-  padding: 30px;
-  height: 100%;
+  padding: 35px 40px;
+  width: 100%;
 }
 
 .timeline {
   position: relative;
-  padding-left: 20px;
+  padding-left: 28px;
   border-left: 2px dashed rgba(255, 92, 138, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 28px;
+  margin-top: 15px;
 }
 
 body.dark-theme .timeline {
@@ -1261,10 +1269,10 @@ body.dark-theme .timeline {
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -27px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
+  left: -35px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #ffffff;
   border: 3px solid var(--pink-accent);
@@ -1277,41 +1285,41 @@ body.dark-theme .timeline-item::before {
 }
 
 .timeline-item:hover::before {
-  background: var(--yellow-accent);
-  box-shadow: 0 0 0 5px var(--pink-pastel);
+  transform: scale(1.2);
+  box-shadow: 0 0 0 5px var(--pink-pastel-glow);
 }
 
 .timeline-period {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--pink-accent);
   background: var(--pink-light);
   border: 1px solid rgba(255, 92, 138, 0.15);
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
   display: inline-block;
   margin-bottom: 8px;
 }
 
 .timeline-title {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--navy-deep);
   margin-bottom: 4px;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .timeline-subtitle {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-muted);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .timeline-desc {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -1610,6 +1618,20 @@ body.dark-theme .form-group input:focus, body.dark-theme .form-group textarea:fo
   border-color: rgba(255, 92, 138, 0.25);
 }
 
+body.dark-theme .btn-submit-message {
+  background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-hover) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(255, 117, 143, 0.35);
+}
+
+body.dark-theme .btn-submit-message:hover {
+  background: linear-gradient(135deg, var(--pink-accent-hover) 0%, var(--pink-accent) 100%);
+  box-shadow: 0 12px 30px rgba(255, 117, 143, 0.5);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
 /* ==========================================================================
    LIGHTBOX MODAL
    ========================================================================== */
@@ -1880,9 +1902,8 @@ body.dark-theme .footer {
   .skills-card:nth-child(3) {
     grid-column: span 2;
   }
-  .experience-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .timeline-block {
+    padding: 25px 20px;
   }
 }
 
@@ -1961,8 +1982,8 @@ body.dark-theme .footer {
   .certifications-grid {
     grid-template-columns: 1fr;
   }
-  .about-grid-simple {
-    grid-template-columns: 1fr;
+  .about-card {
+    padding: 30px 22px;
   }
   .contact-grid {
     grid-template-columns: 1fr;

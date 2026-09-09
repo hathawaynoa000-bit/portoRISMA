@@ -1,191 +1,147 @@
 // Configuration data for Rismatul Maulawati's professional portfolio
-// Formal English edition for academic, counseling, and creative industry opportunities
+// Fully aligned with the latest official CV (English Edition)
 
 const portfolioData = {
   "profile": {
     "name": "Rismatul Maulawati",
-    "title": "Counselor & Graphic Designer",
-    "bio": "A Guidance & Counseling graduate (GPA 3.76/4.00) with a strong Multimedia background, dedicated to counseling, education, social empowerment, and visual communication.",
-    "about_bio": "A Guidance and Counseling graduate from State Islamic University of Siber Syekh Nurjati Cirebon (GPA 3.76/4.00) with a solid Multimedia foundation. I synthesize interpersonal counseling competencies with graphic design expertise to develop engaging educational resources and impactful social advocacy campaigns. Possessing extensive experience in educational leadership and child-and-women empowerment internships, I am actively seeking career opportunities in counseling, education, social empowerment, and the creative design industry.",
+    "title": "Social Media Specialist & Graphic Designer",
+    "bio": "Fresh graduate with a Bachelor's degree in Islamic Guidance and Counseling, with a strong background in Multimedia and experience in Social Media Management, Content Creation, and Graphic Design.",
+    "about_bio": "Fresh graduate with a Bachelor's degree in Islamic Guidance and Counseling, with a strong background in Multimedia and experience in Social Media Management, Content Creation, and Graphic Design. Experienced in managing social media, developing creative content, designing visual materials, copywriting, branding, and producing photo and video content. Able to manage creative projects independently from planning to publication, with strong communication, creativity, and attention to detail. Interested in pursuing a career as a Social Media Specialist and Graphic Designer.",
     "profile_image": "assets/profile.png",
     "contact": {
       "email": "rismamaula960@gmail.com",
       "instagram": "@rismamaulaa",
       "instagram_url": "https://instagram.com/rismamaulaa",
-      "phone": "0831-1634-9988"
+      "phone": "083116349988",
+      "location": "Cirebon, Jawa Barat, Indonesia"
     },
-    "languages": "Languages: Indonesian (Native) & English (Professional Proficiency, ELPROTE Score: 577)"
+    "languages": "Languages: Indonesian (Native) & English (Intermediate - ELProTe Certified)"
   },
-  "education": [
-    {
-      "school": "State Islamic University of Siber Syekh Nurjati Cirebon (UINSSC)",
-      "major": "Bachelor of Guidance and Counseling (S.Pd.)",
-      "period": "2022 - 2026",
-      "description": "Graduated with High Honors (GPA: 3.76 / 4.00). Actively participated in academic organizations, classical and group guidance, individual counseling, student psychological assessments, and departmental administration."
-    },
-    {
-      "school": "SMK Negeri 1 Lemahabang",
-      "major": "Vocational Diploma in Multimedia",
-      "period": "2019 - 2022",
-      "description": "Graduated with a final grade average of 84.27 / 100. Mastered core visual communication principles, print graphic design, digital photography, videography, and post-production video editing."
-    }
-  ],
   "experience": [
     {
-      "title": "READING & LITERACY TUTOR",
-      "role": "Bimbel Les Anak Hebat",
-      "period": "May 2026 - July 2026",
-      "description": "• Provided early childhood and primary school reading instruction and foundational literacy mentoring.<br>• Taught progressive reading competencies including letter recognition, syllable phonics, vocabulary building, and sentence structuring.<br>• Developed interactive learning strategies to foster reading fluency, self-confidence, and active learning interest.<br>• Monitored learning progress and delivered regular developmental evaluations to parents."
-    },
-    {
-      "title": "ASSISTANT COUNSELOR",
-      "role": "Women Crisis Centre Mawar Balqis",
+      "title": "Woman Crisis Centre Mawar Balqis",
+      "role": "Creative Content & Counselor Intern",
       "period": "September 2025",
-      "description": "• Assisted women and children victims of domestic violence and abuse through crisis intake support and multi-agency service coordination.<br>• Facilitated school-based guidance sessions on violence prevention, mental health awareness, and gender equality.<br>• Developed educational digital content and social media advocacy campaigns focused on human rights protection.<br>• Delivered pre-departure psychological counseling and safe migration education for Indonesian Migrant Workers (PMI) via the Migrant Resource Center."
+      "location": "Kab. Cirebon, Jawa Barat, Indonesia",
+      "description": "• Created educational social media content at @wccmawarbalqis_ to support public education and awareness campaigns related to women and children.<br>• Assisted in developing visual communication materials and digital content for organizational activities and social campaigns.<br>• Assisted in counseling and guidance activities for women and children.<br>• Supported administrative tasks and documentation related to program activities."
     },
     {
-      "title": "CHILD PROTECTION INTERN",
-      "role": "DP3APPKB Cirebon City Government",
-      "period": "July 2024 - August 2024",
-      "description": "• Managed departmental administrative workflows, case archiving, and sensitive records management.<br>• Prepared structured outreach presentations and educational materials on child abuse prevention and women empowerment.<br>• Supported public outreach initiatives and conducted case observation under senior supervisory oversight."
+      "title": "Rife Goods",
+      "role": "Graphic Designer & Social Media Specialist",
+      "period": "March 2025 – April 2025",
+      "location": "Kab. Cirebon, Jawa Barat, Indonesia",
+      "description": "• Managed the creative and social media process from planning and content development to visual production and publication.<br>• Developed brand identity elements, including logo, social media visuals, instagram feeds designs of @rifegoods.co, promotions content, and packaging design."
     },
     {
-      "title": "SCHOOL COUNSELOR TRAINEE (PRACTICUM)",
-      "role": "SMP Negeri 8 Cirebon",
-      "period": "October 2024 - November 2024",
-      "description": "• Administered classroom guidance lessons, group guidance, group counseling, and individual counseling sessions tailored to student needs.<br>• Conducted diagnostic needs assessments to formulate formal Counseling Service Implementation Plans (RPL).<br>• Maintained comprehensive guidance records, documentation, and programmatic evaluation reports."
+      "title": "Dinas Pemberdayaan Perempuan, Perlindungan Anak, Pengendalian Penduduk, dan Keluarga Berencana (DP3APPKB)",
+      "role": "Child Protection Division Intern",
+      "period": "August 2024",
+      "location": "Kota Cirebon, Jawa Barat, Indonesia",
+      "description": "• Assisted with administrative tasks and document management.<br>• Supported the preparation and implementation of socialization and outreach activities.<br>• Assisted with event coordination and communication with related parties."
     },
     {
-      "title": "GUIDANCE & COUNSELOR",
-      "role": "Indonesian Planned Parenthood Association (PKBI) Cirebon",
-      "period": "April 2024 - May 2024",
-      "description": "• Delivered individual and group counseling interventions to key population demographics.<br>• Executed preliminary psychological assessments and applied professional counseling ethics in client advocacy.<br>• Prepared administrative reports, case documentation, and evaluated ongoing client intervention outcomes."
+      "title": "Komunitas Narasi Jawa Barat",
+      "role": "Member of Innovation Creation",
+      "period": "August 2024 – September 2025",
+      "location": "Jawa Barat, Indonesia",
+      "description": "• Supporting educational and community-based initiatives.<br>• Contributed to creative ideas and communication materials for organizational programs."
     },
     {
-      "title": "CONSILIUM PEER COUNSELOR",
-      "role": "Class I Cirebon Detention Center (HIMABKI)",
-      "period": "September 2023 - October 2023",
-      "description": "• Conducted individualized counseling sessions for juvenile inmates at Class I Cirebon Detention Facility.<br>• Established therapeutic rapport and identified psychosocial needs through systematic observation and structured dialogue.<br>• Guided juvenile clients in formulating personal development strategies and post-release reintegration plans."
+      "title": "Jabar Bergerak Zillenial Kabupaten Cirebon",
+      "role": "Creative Media Lead and Public Relation",
+      "period": "March 2023 – August 2025",
+      "location": "Kab. Cirebon, Jawa Barat, Indonesia",
+      "description": "• Managed creative media and public relations activities for organizational programs and social campaigns.<br>• Created Instagram content, social media feeds, copywriting, photography, videography, and event documentation.<br>• Developed and managed creative content for several programs and accounts, including @jbz_kabcirebon, @bhakticaruban, and head of media \"Hayu Diajar Bumi Pasundan\" program.<br>• Coordinated creative activities and supported consistent visual communication across organizational campaigns.<br>• Build communication and collaboration with external partners."
     }
   ],
-  "organization": [
+  "education": [
     {
-      "name": "Jabar Bergerak Zillenial (JBZ) Cirebon Regency",
-      "role": "Head of Public Relations Department",
-      "period": "June 2024 - August 2025",
-      "description": "• Directed Public Relations and Creative Media divisions to elevate organizational brand positioning and public communication.<br>• Established strategic partnerships and collaborative engagements with external stakeholders and community partners.<br>• Supervised promotional publication materials, multimedia content production, and official press documentation."
+      "school": "Universitas Islam Negeri Siber Syekh Nurjati Cirebon",
+      "major": "S1 - Islamic Guidance and Counseling (GPA: 3.76)",
+      "period": "2022 - 2026",
+      "location": "Kota Cirebon, Jawa Barat, Indonesia",
+      "description": "Graduated with a GPA of 3.76 / 4.00. Deepened competencies in communication, client counseling, administrative workflows, and educational media development."
     },
     {
-      "name": "Narasi Community West Java",
-      "role": "Innovation & Creation Division Member",
-      "period": "August 2024 - September 2025",
-      "description": "• Conceptualized and executed educational initiatives, leadership workshops, and community development programs.<br>• Conducted strategic research and analytical studies on educational and socio-cultural community dynamics."
-    },
-    {
-      "name": "Jabar Bergerak Zillenial (JBZ) Cirebon Regency",
-      "role": "Head of Creative Media Division",
-      "period": "March 2023 - June 2024",
-      "description": "• Led the creative media production team in developing visual communication strategies across digital channels.<br>• Designed social media feeds, cohesive visual branding guidelines, promotional photography, videography, and copywriting.<br>• Maintained brand consistency and high visual production standards across all digital platforms."
+      "school": "SMKN 1 Lemahabang",
+      "major": "SMK - Multimedia (Final Score: 84.27)",
+      "period": "2019 - 2022",
+      "location": "Kab. Cirebon, Jawa Barat, Indonesia",
+      "description": "Graduated with a final score of 84.27 / 100. Mastered graphic design, visual branding, photo & video production, and commercial advertising pipelines."
     }
   ],
   "training": [
     {
-      "title": "International Generative AI for Students",
-      "program": "LSP State Islamic University Siber Syekh Nurjati Cirebon",
+      "title": "International Generative AI for Student",
+      "program": "Lembaga Sertifikasi Profesi (LSP) UIN Siber Syekh Nurjati Cirebon",
       "period": "November 2025",
-      "description": "• Completed specialized training on leveraging Generative Artificial Intelligence (AI) for academic and professional excellence.<br>• Mastered AI tools for presentation design, portfolio structuring, copywriting, and ethical prompt engineering."
+      "description": "Specialized training on leveraging Generative AI tools for presentation design, copywriting, prompt engineering, and creative productivity."
     },
     {
-      "title": "Junior Graphic Designer Certification Program",
-      "program": "Vocational School Graduate Academy (VSGA) - DTS Kominfo",
+      "title": "Junior Graphic Design",
+      "program": "Vocational School Graduate Academy (VSGA) - Digital Talent Scholarship (Digitalent) Kominfo",
       "period": "February 2023 - March 2023",
-      "description": "• Mastered fundamental principles of visual arts, communication design, design briefs, and industry-standard software workflows.<br>• Developed commercial-grade creative designs adhering to national competency standards."
+      "description": "Certified in fundamental principles of visual arts, communication design, design briefs, and industry-standard creative software workflows."
     },
     {
-      "title": "Commercial Advertising Media Project",
-      "program": "Multimedia Vocational Competency Assessment (UKK) - PT Mapan Global Film",
+      "title": "Multimedia Commercial Advertisement Project",
+      "program": "Mapan Global Film",
       "period": "March 2022",
-      "description": "• Executed an end-to-end commercial advertising production project assessed and validated by PT Mapan Global Film.<br>• Integrated comprehensive multimedia production pipelines including photography, cinematography, brand identity, packaging design, and motion graphics."
-    }
-  ],
-  "volunteer": [
-    {
-      "title": "PBAK FDKI Orientation Committee",
-      "role": "Logistics & Equipment Division",
-      "period": "2023",
-      "description": "Managed event logistics, synchronized multi-divisional equipment allocation, and ensured operational readiness throughout the university orientation."
+      "description": "End-to-end commercial advertising and packaging production project assessed and validated by PT Mapan Global Film."
     },
     {
-      "title": "Bhakti Caruban Social Expedition",
-      "role": "Public Relations & Sponsorship (JBZ Cirebon)",
-      "period": "2023",
-      "description": "Spearheaded corporate sponsorship proposals, secured external partnerships, and managed social media coverage for community welfare initiatives."
-    },
-    {
-      "title": "Hayu Diajar Bumi Pasundan Literacy Program",
-      "role": "Head of Media (JBZ Cirebon)",
-      "period": "2023 & 2024",
-      "description": "Directed media and promotional campaigns for children's literacy initiatives across West Java, creating marketing collateral and interactive documentation."
-    },
-    {
-      "title": "Community Service Program (KKN)",
-      "role": "Event Coordinator & Program Lead",
-      "period": "2025",
-      "description": "Led a community literacy advancement project in underserved regions, establishing interactive reading sessions and collaborating with the Regional Public Library."
-    },
-    {
-      "title": "Ecoshore Super Clean Up Movement",
-      "role": "Environmental Volunteer (Kolaborator Kebaikan & Paragonation)",
-      "period": "2025",
-      "description": "Participated in coastal conservation clean-up operations to protect marine ecosystems and foster environmental stewardship."
+      "title": "English Language Proficiency Test (ELProTe)",
+      "program": "Language Center of UIN Siber Syekh Nurjati Cirebon",
+      "period": "February 2026 - February 2028",
+      "description": "Official English language proficiency certification credential."
     }
   ],
   "skills": {
     "hard_skills": [
-      { "name": "Individual & Group Counseling", "level": 5 },
-      { "name": "Graphic & Print Design", "level": 5 },
-      { "name": "Public Speaking & Presentation", "level": 5 },
-      { "name": "Social Media Management & Copywriting", "level": 4 },
-      { "name": "Administrative & Records Management", "level": 4 }
+      { "name": "Administration & Document Management", "level": 5 },
+      { "name": "Design Graphic & Visual Branding", "level": 5 },
+      { "name": "Social Media Management & Content Planner", "level": 5 },
+      { "name": "Editing & Copywriting", "level": 4 },
+      { "name": "Photo & Video Production", "level": 4 }
     ],
     "software_tools": [
       { "name": "Canva", "level": 5 },
-      { "name": "Microsoft Office Suite", "level": 5 },
+      { "name": "Microsoft Office", "level": 5 },
       { "name": "Adobe Illustrator", "level": 4 },
       { "name": "Adobe Photoshop", "level": 4 },
-      { "name": "CapCut & Video Editing", "level": 4 }
+      { "name": "CapCut / Video Editing", "level": 4 }
     ],
     "soft_skills": [
       "Problem Solving",
-      "Detail-Oriented",
+      "Detail Oriented",
       "Public Speaking",
-      "Interpersonal Communication",
-      "Administrative Organization",
-      "Team Collaboration",
-      "Empathetic Listening"
+      "Communication",
+      "Teamwork",
+      "Creative Thinking",
+      "Content Planning"
     ]
   },
   "certifications": [
     {
-      "title": "English Language Proficiency Test (ELPROTE)",
+      "title": "English Language Proficiency Test (ELProTe)",
       "issuer": "Language Center of UIN Siber Syekh Nurjati Cirebon",
-      "year": "2026 - 2028",
+      "year": "February 2026 - February 2028",
       "image": "assets/cert_english.jpg",
-      "description": "Official English proficiency certification credential with a verified score of 577 (Valid Feb 2026 - Feb 2028)."
+      "description": "Official English language proficiency credential verified by the Language Center of UIN Siber Syekh Nurjati Cirebon."
     },
     {
-      "title": "Certified Junior Graphic Designer (VSGA)",
-      "issuer": "Ministry of Communication and Informatics (KOMINFO)",
+      "title": "Junior Graphic Design (VSGA)",
+      "issuer": "Digital Talent Scholarship (Digitalent) Kominfo",
       "year": "2023",
       "image": "assets/cert_ukk.jpg",
-      "description": "National industry-standard professional competency credential in graphic and communication design."
+      "description": "National competency certification in graphic design and visual communication."
     },
     {
-      "title": "Multimedia Vocational Competency Certificate",
-      "issuer": "Ministry of Education & Culture / SMKN 1 Lemahabang",
+      "title": "Multimedia Commercial Advertisement Project",
+      "issuer": "Mapan Global Film / SMKN 1 Lemahabang",
       "year": "2022",
       "image": "assets/cert_ujikom.jpg",
-      "description": "Graduated with High Distinction in comprehensive multimedia production, branding, and commercial video advertising."
+      "description": "Vocational commercial advertising project credential validated by PT Mapan Global Film."
     }
   ],
   "projects": [
@@ -193,25 +149,25 @@ const portfolioData = {
       "id": "project-social-media",
       "title": "Social Media Marketing & Visual Branding",
       "category": "Social Media",
-      "period": "January 2023 - Present",
-      "tools": ["Canva", "Adobe Illustrator"],
-      "description": "Instagram feed and story design for freelance culinary brand identity, optimizing follower engagement through visual storytelling.",
+      "period": "March 2025 - Present",
+      "tools": ["Canva", "Adobe Illustrator", "Photoshop"],
+      "description": "Instagram feed and story design for brand identity (@rifegoods.co and culinary brands), optimizing follower engagement through visual storytelling.",
       "image": "assets/page_5.png"
     },
     {
       "id": "project-poster-sosial",
-      "title": "Public Advocacy Poster Series",
+      "title": "Public Advocacy & Awareness Posters",
       "category": "Graphic Design",
-      "period": "2022",
+      "period": "2024 - 2025",
       "tools": ["Canva", "Adobe Illustrator"],
-      "description": "Social campaign poster series addressing public welfare awareness, highlighting structured typography and communicative educational visuals.",
+      "description": "Educational campaign poster series addressing public welfare and community awareness, featuring communicative typography and visuals.",
       "image": "assets/page_6.png"
     },
     {
       "id": "project-instagram-bkiaiane",
       "title": "Institutional Social Media Content (@BKIAINE)",
       "category": "Graphic Design",
-      "period": "2023",
+      "period": "2023 - 2024",
       "tools": ["Canva", "Adobe Illustrator"],
       "description": "Comprehensive digital content creation for academic organization feeds, multi-slide educational carousels, and promotional grids.",
       "image": "assets/page_7.png"
@@ -222,7 +178,7 @@ const portfolioData = {
       "category": "Cover & Logo",
       "period": "March 2022",
       "tools": ["Adobe Photoshop", "Adobe Illustrator"],
-      "description": "Packaging cover design, commercial brand logo, and media assets for a traditional beverage brand as part of the National Vocational Competency Examination.",
+      "description": "Packaging cover design, commercial brand logo, and media assets for a traditional beverage brand.",
       "image": "assets/page_8.png"
     },
     {

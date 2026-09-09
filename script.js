@@ -207,79 +207,68 @@ document.addEventListener('DOMContentLoaded', () => {
     if (aboutEmail) aboutEmail.textContent = profile.contact.email;
     if (aboutInstagram) aboutInstagram.textContent = profile.contact.instagram;
 
+    // Experience Timeline (Work & Organization Experience from CV)
+    if (experienceTimeline) {
+      experienceTimeline.innerHTML = '';
+      experience.forEach(exp => {
+        const expItem = document.createElement('div');
+        expItem.className = 'timeline-item';
+        expItem.innerHTML = `
+          <span class="timeline-period">${exp.period}</span>
+          <h4 class="timeline-title">${exp.role}</h4>
+          <h5 class="timeline-subtitle">${exp.title} ${exp.location ? `• ${exp.location}` : ''}</h5>
+          <p class="timeline-desc">${exp.description || ''}</p>
+        `;
+        experienceTimeline.appendChild(expItem);
+      });
+    }
+
     // Education Timeline
-    educationTimeline.innerHTML = '';
-    education.forEach(edu => {
-      const eduItem = document.createElement('div');
-      eduItem.className = 'timeline-item';
-      eduItem.innerHTML = `
-        <span class="timeline-period">${edu.period}</span>
-        <h4 class="timeline-title">${edu.major}</h4>
-        <h5 class="timeline-subtitle">${edu.school}</h5>
-        <p class="timeline-desc">${edu.description || ''}</p>
-      `;
-      educationTimeline.appendChild(eduItem);
-    });
+    if (educationTimeline) {
+      educationTimeline.innerHTML = '';
+      education.forEach(edu => {
+        const eduItem = document.createElement('div');
+        eduItem.className = 'timeline-item';
+        eduItem.innerHTML = `
+          <span class="timeline-period">${edu.period}</span>
+          <h4 class="timeline-title">${edu.major}</h4>
+          <h5 class="timeline-subtitle">${edu.school} ${edu.location ? `• ${edu.location}` : ''}</h5>
+          <p class="timeline-desc">${edu.description || ''}</p>
+        `;
+        educationTimeline.appendChild(eduItem);
+      });
+    }
 
-    // Training Timeline (Pelatihan)
-    trainingTimeline.innerHTML = '';
-    training.forEach(train => {
-      const trainItem = document.createElement('div');
-      trainItem.className = 'timeline-item';
-      trainItem.innerHTML = `
-        <span class="timeline-period">${train.period}</span>
-        <h4 class="timeline-title">${train.title}</h4>
-        <h5 class="timeline-subtitle">${train.program}</h5>
-        <p class="timeline-desc">${train.description || ''}</p>
-      `;
-      trainingTimeline.appendChild(trainItem);
-    });
+    // Training & Certifications Timeline
+    if (trainingTimeline) {
+      trainingTimeline.innerHTML = '';
+      training.forEach(train => {
+        const trainItem = document.createElement('div');
+        trainItem.className = 'timeline-item';
+        trainItem.innerHTML = `
+          <span class="timeline-period">${train.period}</span>
+          <h4 class="timeline-title">${train.title}</h4>
+          <h5 class="timeline-subtitle">${train.program}</h5>
+          <p class="timeline-desc">${train.description || ''}</p>
+        `;
+        trainingTimeline.appendChild(trainItem);
+      });
+    }
 
-    // Experience Timeline (Magang/Kerja)
-    experienceTimeline.innerHTML = '';
-    experience.forEach(exp => {
-      const expItem = document.createElement('div');
-      expItem.className = 'timeline-item';
-      expItem.innerHTML = `
-        <span class="timeline-period">${exp.period}</span>
-        <h4 class="timeline-title">${exp.title}</h4>
-        <h5 class="timeline-subtitle">${exp.role}</h5>
-        <p class="timeline-desc">${exp.description || ''}</p>
-      `;
-      experienceTimeline.appendChild(expItem);
-    });
-
-    // Organization Timeline
-    organizationTimeline.innerHTML = '';
-    organization.forEach(org => {
-      const orgItem = document.createElement('div');
-      orgItem.className = 'timeline-item';
-      orgItem.innerHTML = `
-        <span class="timeline-period">${org.period}</span>
-        <h4 class="timeline-title">${org.role}</h4>
-        <h5 class="timeline-subtitle">${org.name}</h5>
-        <p class="timeline-desc">${org.description || ''}</p>
-      `;
-      organizationTimeline.appendChild(orgItem);
-    });
-
-    // Volunteer & Event Timeline
-    const volunteerTimeline = document.getElementById('volunteerTimeline');
-    if (volunteerTimeline) {
-      volunteerTimeline.innerHTML = '';
-      if (data.volunteer) {
-        data.volunteer.forEach(vol => {
-          const volItem = document.createElement('div');
-          volItem.className = 'timeline-item';
-          volItem.innerHTML = `
-            <span class="timeline-period">${vol.period}</span>
-            <h4 class="timeline-title">${vol.title}</h4>
-            <h5 class="timeline-subtitle">${vol.role}</h5>
-            <p class="timeline-desc">${vol.description || ''}</p>
-          `;
-          volunteerTimeline.appendChild(volItem);
-        });
-      }
+    // Optional legacy timeline containers if present
+    if (organizationTimeline && data.organization) {
+      organizationTimeline.innerHTML = '';
+      data.organization.forEach(org => {
+        const orgItem = document.createElement('div');
+        orgItem.className = 'timeline-item';
+        orgItem.innerHTML = `
+          <span class="timeline-period">${org.period}</span>
+          <h4 class="timeline-title">${org.role}</h4>
+          <h5 class="timeline-subtitle">${org.name}</h5>
+          <p class="timeline-desc">${org.description || ''}</p>
+        `;
+        organizationTimeline.appendChild(orgItem);
+      });
     }
 
     // 3. Skills Section

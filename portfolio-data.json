@@ -120,25 +120,53 @@
   },
   "certifications": [
     {
-      "title": "English Language Proficiency Test (ELProTe)",
-      "issuer": "Language Center of UIN Siber Syekh Nurjati Cirebon",
-      "year": "February 2026 - February 2028",
-      "image": "assets/cert_english.jpg",
-      "description": "Official English language proficiency credential verified by the Language Center of UIN Siber Syekh Nurjati Cirebon."
-    },
-    {
-      "title": "Junior Graphic Design (VSGA)",
-      "issuer": "Digital Talent Scholarship (Digitalent) Kominfo",
+      "title": "Junior Graphic Designer (VSGA)",
+      "issuer": "Digital Talent Scholarship (Digitalent) - Kominfo RI",
       "year": "2023",
-      "image": "assets/cert_ukk.jpg",
-      "description": "National competency certification in graphic design and visual communication."
+      "image": "assets/certificates/cert_kominfo_vsga.png",
+      "description": "Sertifikasi Pelatihan Junior Graphic Designer dalam Program Vocational School Graduate Academy (VSGA) Kominfo - 67 Jam Pelatihan."
     },
     {
-      "title": "Multimedia Commercial Advertisement Project",
-      "issuer": "Mapan Global Film / SMKN 1 Lemahabang",
+      "title": "Sertifikat Kompetensi Keahlian SMK Multimedia",
+      "issuer": "PT. Mapan Global Film & SMKN 1 Lemahabang",
       "year": "2022",
-      "image": "assets/cert_ujikom.jpg",
-      "description": "Vocational commercial advertising project credential validated by PT Mapan Global Film."
+      "image": "assets/certificates/cert_mapan_film.jpg",
+      "description": "Uji Kompetensi Keahlian (UKK) Multimedia bidang periklanan komersial dan produksi visual media tervalidasi industri."
+    },
+    {
+      "title": "Staff Innovation Creator",
+      "issuer": "Komunitas Narasi Jawa Barat",
+      "year": "2024 / 2025",
+      "image": "assets/certificates/cert_org_p1.png",
+      "description": "Certificate of Participation sebagai Staff Innovation Creator Batch 2024/2025 dalam pengembangan materi kreatif dan program edukasi."
+    },
+    {
+      "title": "Ketua Bidang Humas (Tahun 2024)",
+      "issuer": "Jabar Bergerak Zillenial Kabupaten Cirebon",
+      "year": "2024",
+      "image": "assets/certificates/cert_org_p2.png",
+      "description": "Sertifikat Kepengurusan atas dedikasi dan kontribusi sebagai Ketua Bidang Hubungan Masyarakat (Humas) Periode 2024."
+    },
+    {
+      "title": "Anggota Bidang Humas (Tahun 2023)",
+      "issuer": "Jabar Bergerak Zillenial Kabupaten Cirebon",
+      "year": "2023",
+      "image": "assets/certificates/cert_org_p3.png",
+      "description": "Sertifikat Kepengurusan atas dedikasi luar biasa dalam pengelolaan media sosial dan hubungan masyarakat Periode 2023."
+    },
+    {
+      "title": "English Language Proficiency Test (ELProTe)",
+      "issuer": "Pusat Bahasa UIN Siber Syekh Nurjati Cirebon",
+      "year": "2026 - 2028",
+      "image": "assets/certificates/cert_language_p1.png",
+      "description": "Official English Language Proficiency Test credential dengan total skor 577 (Listening: 61, Structure: 55, Reading: 57)."
+    },
+    {
+      "title": "Arabic Language Proficiency Test",
+      "issuer": "Pusat Bahasa UIN Siber Syekh Nurjati Cirebon",
+      "year": "2026 - 2028",
+      "image": "assets/certificates/cert_language_p2.png",
+      "description": "Sertifikat Kemahiran Bahasa Arab (Ikhtibar fi al-Lughah al-'Arabiyyah) dengan total skor 367."
     }
   ],
   "projects": [

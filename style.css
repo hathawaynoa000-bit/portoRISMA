@@ -997,6 +997,140 @@ body.dark-theme .hero-photo-container:hover .hero-profile-img {
 }
 
 /* ==========================================================================
+   ABOUT ME HIGHLIGHTS BANNER (Reference Style from Image 1 & 2)
+   ========================================================================== */
+.about-highlights-banner {
+  padding: 44px 0;
+  margin-top: 40px;
+  background: linear-gradient(180deg, rgba(255, 245, 248, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
+  border-top: 1px solid rgba(220, 70, 140, 0.12);
+  border-bottom: 1px solid rgba(220, 70, 140, 0.12);
+  position: relative;
+}
+
+body.dark-theme .about-highlights-banner {
+  background: linear-gradient(180deg, rgba(28, 20, 36, 0.6) 0%, rgba(18, 14, 24, 0.4) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Stats Glass Card matching Image 2 */
+.stats-highlight-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 32px 48px;
+  max-width: 920px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(220, 70, 140, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+body.dark-theme .stats-highlight-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+}
+
+.stat-highlight-num {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--pink-accent);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.stat-highlight-label {
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  line-height: 1.35;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+body.dark-theme .stat-highlight-label {
+  color: var(--text-dark);
+}
+
+.stat-highlight-divider {
+  width: 1px;
+  height: 52px;
+  background: rgba(220, 70, 140, 0.2);
+}
+
+body.dark-theme .stat-highlight-divider {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Organization / Collaboration Badges Strip (Reference Image 1) */
+.highlight-orgs-wrapper {
+  margin-top: 32px;
+  text-align: center;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight-orgs-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.highlight-orgs-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+}
+
+.org-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all var(--transition-normal);
+}
+
+.org-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink-accent);
+  flex-shrink: 0;
+}
+
+.org-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--pink-accent);
+  box-shadow: 0 6px 16px rgba(220, 70, 140, 0.15);
+  color: var(--pink-accent);
+}
+
+/* ==========================================================================
    SKILLS SECTION
    ========================================================================== */
 .skills-grid {
@@ -1456,19 +1590,26 @@ body.dark-theme .timeline-subtitle {
 
 .cert-image-box {
   width: 100%;
-  aspect-ratio: 1.5;
+  aspect-ratio: 1.42;
   overflow: hidden;
   border-radius: var(--border-radius-md);
   margin-bottom: 20px;
   position: relative;
-  background: rgba(255, 92, 138, 0.02);
+  background: #ffffff;
   border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+body.dark-theme .cert-image-box {
+  background: #1a1622;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .cert-thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: var(--transition-smooth);
 }
 
@@ -2141,21 +2282,40 @@ body.dark-theme .footer {
     display: none; /* Hide floating badges on mobile screens to keep layout clean */
   }
 
-  .hero-stats-bar {
-    justify-content: space-around;
-    padding: 12px 14px;
+  .about-highlights-banner {
+    padding: 32px 0;
+    margin-top: 30px;
+  }
+  .stats-highlight-card {
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 16px;
+    border-radius: 18px;
+  }
+  .stat-highlight-item {
+    width: 100%;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .stat-highlight-num {
+    font-size: 2.3rem;
+  }
+  .stat-highlight-label {
+    font-size: 0.78rem;
+  }
+  .stat-highlight-divider {
+    width: 100%;
+    height: 1px;
+  }
+  .highlight-orgs-wrapper {
+    margin-top: 24px;
+  }
+  .highlight-orgs-pills {
     gap: 8px;
-    text-align: center;
-    max-width: 100%;
   }
-  .hero-stat-num {
-    font-size: 1.25rem;
-  }
-  .hero-stat-label {
-    font-size: 0.68rem;
-  }
-  .hero-stat-divider {
-    height: 24px;
+  .org-pill {
+    padding: 6px 14px;
+    font-size: 0.78rem;
   }
 
   .about-single-wrapper {

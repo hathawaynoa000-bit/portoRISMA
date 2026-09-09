@@ -2274,7 +2274,7 @@ body.dark-theme .footer {
   .hero-photo-container {
     max-width: 360px;
     margin: 0 auto 15px;
-    transform: translateY(0);
+    transform: translateX(14px); /* Optical center compensation for decorative shapes */
   }
   .hero-profile-img {
     max-height: 420px;
@@ -2437,10 +2437,11 @@ body.dark-theme .footer {
     font-size: 1.5rem;
   }
   .hero-photo-container {
-    max-width: 300px;
+    max-width: 320px;
+    transform: translateX(14px);
   }
   .hero-profile-img {
-    max-height: 350px;
+    max-height: 380px;
   }
   .section-title {
     font-size: 1.85rem;

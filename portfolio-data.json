@@ -120,6 +120,13 @@
   },
   "certifications": [
     {
+      "title": "CertNexus GenAIBIZ™ - Generative AI Certification",
+      "issuer": "CertNexus",
+      "year": "November 2025",
+      "image": "assets/certificates/cert_genai_certnexus.png",
+      "description": "International credential recognizing proficiency in Generative AI technologies, prompt design, and AI-driven business and creative productivity."
+    },
+    {
       "title": "Junior Graphic Designer (VSGA)",
       "issuer": "Digital Talent Scholarship (Digitalent) - Ministry of Communication and Informatics (Kominfo RI)",
       "year": "2023",
@@ -134,11 +141,11 @@
       "description": "Industry-validated vocational competency certificate in commercial advertising production and multimedia visual communications."
     },
     {
-      "title": "Staff Innovation Creator",
-      "issuer": "Komunitas Narasi Jawa Barat",
-      "year": "2024 / 2025",
-      "image": "assets/certificates/cert_org_p1.png",
-      "description": "Certificate of Participation as Staff Innovation Creator for Batch 2024/2025, contributing to creative campaign development and educational initiatives."
+      "title": "English Language Proficiency Test (ELProTe)",
+      "issuer": "Language Center of UIN Siber Syekh Nurjati Cirebon",
+      "year": "2026 - 2028",
+      "image": "assets/certificates/cert_language_p1.png",
+      "description": "Official English language proficiency test credential with a total score of 577 (Listening: 61, Structure: 55, Reading: 57)."
     },
     {
       "title": "Head of Public Relations Division",
@@ -148,25 +155,18 @@
       "description": "Leadership certificate recognizing exemplary dedication and leadership as the Head of Public Relations Division for the 2024 organizational tenure."
     },
     {
+      "title": "Staff Innovation Creator",
+      "issuer": "Komunitas Narasi Jawa Barat",
+      "year": "2024 / 2025",
+      "image": "assets/certificates/cert_org_p1.png",
+      "description": "Certificate of Participation as Staff Innovation Creator for Batch 2024/2025, contributing to creative campaign development and educational initiatives."
+    },
+    {
       "title": "Public Relations Division Member",
       "issuer": "Jabar Bergerak Zillenial Kabupaten Cirebon",
       "year": "2023",
       "image": "assets/certificates/cert_org_p3.png",
       "description": "Certificate of Contribution recognizing active dedication in social media content production, event coverage, and public communication in 2023."
-    },
-    {
-      "title": "English Language Proficiency Test (ELProTe)",
-      "issuer": "Language Center of UIN Siber Syekh Nurjati Cirebon",
-      "year": "2026 - 2028",
-      "image": "assets/certificates/cert_language_p1.png",
-      "description": "Official English language proficiency test credential with a total score of 577 (Listening: 61, Structure: 55, Reading: 57)."
-    },
-    {
-      "title": "Arabic Language Proficiency Test",
-      "issuer": "Language Center of UIN Siber Syekh Nurjati Cirebon",
-      "year": "2026 - 2028",
-      "image": "assets/certificates/cert_language_p2.png",
-      "description": "Official Arabic language proficiency certificate (Ikhtibar fi al-Lughah al-'Arabiyyah) with a total score of 367."
     }
   ],
   "projects": [

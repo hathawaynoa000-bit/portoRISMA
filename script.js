@@ -135,11 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Hero 3D Interactive Parallax & Tilt Animation ---
-  const heroImageContainer = document.querySelector('.hero-blob-container-new');
-  const heroBlobCard = document.querySelector('.hero-blob-card');
-  const heroBlobGlow = document.querySelector('.hero-blob-glow');
+  const heroImageContainer = document.querySelector('.hero-photo-container') || document.querySelector('.hero-blob-container-new');
+  const heroProfileImg = document.querySelector('.hero-profile-img') || document.querySelector('.hero-blob-card');
   
-  if (heroImageContainer && heroBlobCard) {
+  if (heroImageContainer && heroProfileImg) {
     heroImageContainer.addEventListener('mousemove', (e) => {
       const rect = heroImageContainer.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -148,26 +147,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       
-      // Maximum tilt rotation of 12 degrees
-      const rotateX = ((centerY - y) / centerY) * 12;
-      const rotateY = ((x - centerX) / centerX) * 12;
+      // Gentle tilt rotation of 8 degrees
+      const rotateX = ((centerY - y) / centerY) * 8;
+      const rotateY = ((x - centerX) / centerX) * 8;
       
-      heroBlobCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-      
-      if (heroBlobGlow) {
-        // Parallax offset for background glow
-        const moveX = ((x - centerX) / centerX) * 12;
-        const moveY = ((y - centerY) / centerY) * 12;
-        heroBlobGlow.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) scale3d(1.04, 1.04, 1.04)`;
-      }
+      heroProfileImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
     });
     
     heroImageContainer.addEventListener('mouseleave', () => {
-      // Return to center smoothly
-      heroBlobCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-      if (heroBlobGlow) {
-        heroBlobGlow.style.transform = `translate3d(0, 0, 0) scale3d(1, 1, 1)`;
-      }
+      heroProfileImg.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     });
   }
 

@@ -7,7 +7,7 @@ const portfolioData = {
     "title": "Social Media Specialist & Graphic Designer",
     "bio": "Fresh graduate with a Bachelor's degree in Islamic Guidance and Counseling, with a strong background in Multimedia and experience in Social Media Management, Content Creation, and Graphic Design.",
     "about_bio": "Fresh graduate with a Bachelor's degree in Islamic Guidance and Counseling, with a strong background in Multimedia and experience in Social Media Management, Content Creation, and Graphic Design. Experienced in managing social media, developing creative content, designing visual materials, copywriting, branding, and producing photo and video content. Able to manage creative projects independently from planning to publication, with strong communication, creativity, and attention to detail. Interested in pursuing a career as a Social Media Specialist and Graphic Designer.",
-    "profile_image": "assets/profile.png",
+    "profile_image": "assets/Group 44.png",
     "contact": {
       "email": "rismamaula960@gmail.com",
       "instagram": "@rismamaulaa",

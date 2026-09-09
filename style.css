@@ -2,29 +2,29 @@
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 :root {
-  /* Color Palette - Pink Liquid Glass Theme */
-  --pink-pastel: #ffe5ec;
-  --pink-pastel-glow: rgba(255, 229, 236, 0.5);
-  --pink-accent: #ff758f; /* Muted soft pink accent */
-  --pink-accent-hover: #ff8fa3;
-  --pink-light: #fff8f9;
+  /* Color Palette - Magenta & Rose Liquid Glass Theme (Harmonized with Group 44.png) */
+  --pink-pastel: #fcd6e4;
+  --pink-pastel-glow: rgba(252, 214, 228, 0.6);
+  --pink-accent: #c82d7c; /* Vibrant Berry/Magenta Rose from Profile Graphic */
+  --pink-accent-hover: #de4593;
+  --pink-light: #fff2f6;
   
   /* Pink Secondary Shades */
-  --pink-pastel-secondary: #fff0f3; /* Soft blush */
-  --pink-pastel-secondary-glow: rgba(255, 240, 243, 0.4);
-  --pink-accent-secondary: #ff8fa3; /* Muted deep pink */
+  --pink-pastel-secondary: #ffebf3; /* Soft Blush */
+  --pink-pastel-secondary-glow: rgba(255, 235, 243, 0.5);
+  --pink-accent-secondary: #9c195a; /* Deep Rich Magenta from Profile Graphic */
   
-  /* Deep Navy Contrast (Headers & Main Text from PDF) */
-  --navy-deep: #1d3d5f;
-  --navy-light: #2c5282;
-  --text-dark: #2d3748;
-  --text-muted: #64748b;
+  /* Deep Plum Contrast (Headers & Main Text) */
+  --navy-deep: #2c1a29;
+  --navy-light: #442a40;
+  --text-dark: #332230;
+  --text-muted: #6e5568;
   
   /* Glassmorphism Styles (Liquid Glass) */
-  --glass-bg: rgba(255, 255, 255, 0.42);
-  --glass-border: rgba(255, 255, 255, 0.68);
-  --glass-shadow: 0 10px 35px 0 rgba(255, 71, 126, 0.03), inset 0 1.5px 0 rgba(255, 255, 255, 0.85);
-  --glass-bg-hover: rgba(255, 255, 255, 0.65);
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 10px 35px 0 rgba(156, 25, 90, 0.04), inset 0 1.5px 0 rgba(255, 255, 255, 0.85);
+  --glass-bg-hover: rgba(255, 255, 255, 0.7);
   
   /* Fonts */
   --font-title: 'Syne', 'Plus Jakarta Sans', sans-serif;
@@ -41,24 +41,24 @@
 
 /* Dark Mode Theme Variables */
 body.dark-theme {
-  background-color: #0c090a;
-  background: linear-gradient(135deg, #1f080f 0%, #0d090d 100%);
-  color: #f7cad0;
+  background-color: #12070f;
+  background: linear-gradient(135deg, #1c0817 0%, #0d040b 100%);
+  color: #fcd6e4;
   
-  --pink-pastel: #5a1827;
-  --pink-light: #240b10;
-  --pink-pastel-secondary: #802035;
-  --pink-accent-secondary: #ff477e;
+  --pink-pastel: #5a1438;
+  --pink-light: #240817;
+  --pink-pastel-secondary: #7e1e4e;
+  --pink-accent-secondary: #c82d7c;
   
-  --text-dark: #ffe3e8;
-  --text-muted: #a38990;
+  --text-dark: #ffeef5;
+  --text-muted: #b898ab;
   --navy-deep: #ffffff;
-  --navy-light: #f7cad0;
+  --navy-light: #fcd6e4;
   
-  --glass-bg: rgba(20, 10, 12, 0.72);
+  --glass-bg: rgba(24, 10, 20, 0.72);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  --glass-bg-hover: rgba(35, 18, 22, 0.8);
+  --glass-bg-hover: rgba(38, 16, 32, 0.8);
 }
 
 /* ==========================================================================
@@ -548,30 +548,30 @@ body.dark-theme .theme-toggle {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ffe5ec 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--pink-pastel) 0%, #ffffff 100%);
   color: var(--navy-deep);
-  border: 1px solid rgba(255, 92, 138, 0.15);
-  box-shadow: 0 5px 15px rgba(255, 92, 138, 0.03);
+  border: 1px solid rgba(200, 45, 124, 0.2);
+  box-shadow: 0 5px 18px rgba(156, 25, 90, 0.08);
   font-weight: 700;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(255, 92, 138, 0.1);
-  background: linear-gradient(135deg, #ffffff 0%, #ffe5ec 100%);
-  border-color: rgba(255, 92, 138, 0.25);
+  box-shadow: 0 8px 25px rgba(200, 45, 124, 0.18);
+  background: linear-gradient(135deg, #ffffff 0%, var(--pink-pastel) 100%);
+  border-color: rgba(200, 45, 124, 0.35);
 }
 
 body.dark-theme .btn-primary {
-  background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-hover) 100%);
+  background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-secondary) 100%);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 25px rgba(255, 117, 143, 0.35);
+  box-shadow: 0 8px 25px rgba(200, 45, 124, 0.4);
 }
 
 body.dark-theme .btn-primary:hover {
   background: linear-gradient(135deg, var(--pink-accent-hover) 0%, var(--pink-accent) 100%);
-  box-shadow: 0 12px 30px rgba(255, 117, 143, 0.5);
+  box-shadow: 0 12px 30px rgba(200, 45, 124, 0.55);
   border-color: rgba(255, 255, 255, 0.45);
   color: #ffffff;
 }
@@ -680,7 +680,7 @@ body.dark-theme .hero-badge {
 }
 
 .hero-title .gradient-text {
-  background: linear-gradient(135deg, #ff6b8b 15%, #b687f3 90%);
+  background: linear-gradient(135deg, #c82d7c 15%, #9c195a 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -696,7 +696,7 @@ body.dark-theme .hero-badge {
 }
 
 body.dark-theme .hero-cursive {
-  color: var(--pink-pastel-secondary);
+  color: var(--pink-pastel);
 }
 
 .hero-bio {
@@ -712,7 +712,7 @@ body.dark-theme .hero-cursive {
   gap: 15px;
 }
 
-/* Hero Image Wrapper (Clean Floating Graphic without Circle Mask Frame) */
+/* Hero Image Wrapper (Clean Floating Graphic with Ambient Backdrop Glow Shadow) */
 .hero-image-wrapper {
   position: relative;
   display: flex;
@@ -724,7 +724,7 @@ body.dark-theme .hero-cursive {
 .hero-photo-container {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 540px; /* Enlarged photo container */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -732,26 +732,52 @@ body.dark-theme .hero-cursive {
   perspective: 1000px;
 }
 
+.hero-photo-backdrop-glow {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  background: radial-gradient(circle, rgba(200, 45, 124, 0.28) 0%, rgba(156, 25, 90, 0.18) 45%, transparent 72%);
+  filter: blur(48px);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 50%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+body.dark-theme .hero-photo-backdrop-glow {
+  background: radial-gradient(circle, rgba(200, 45, 124, 0.45) 0%, rgba(156, 25, 90, 0.25) 45%, transparent 75%);
+  filter: blur(55px);
+}
+
 .hero-profile-img {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  max-height: 520px;
+  max-height: 580px; /* Enlarged height */
   object-fit: contain;
-  filter: drop-shadow(0 15px 35px rgba(255, 92, 138, 0.15));
+  filter: drop-shadow(0 20px 40px rgba(156, 25, 90, 0.22));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   transform-style: preserve-3d;
 }
 
 .hero-photo-container:hover .hero-profile-img {
   transform: translateY(-8px) scale(1.02);
-  filter: drop-shadow(0 20px 45px rgba(255, 92, 138, 0.25));
+  filter: drop-shadow(0 25px 50px rgba(156, 25, 90, 0.32));
+}
+
+.hero-photo-container:hover .hero-photo-backdrop-glow {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 body.dark-theme .hero-profile-img {
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 25px rgba(200, 45, 124, 0.3));
 }
 
 body.dark-theme .hero-photo-container:hover .hero-profile-img {
-  filter: drop-shadow(0 20px 45px rgba(255, 117, 143, 0.35));
+  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 35px rgba(200, 45, 124, 0.45));
 }
 
 @keyframes floatSparkle {
@@ -1531,13 +1557,13 @@ body.dark-theme .form-group input:focus, body.dark-theme .form-group textarea:fo
   width: 100%;
   background: linear-gradient(135deg, #ffe5ec 0%, #ffffff 100%);
   color: var(--navy-deep);
-  border: 1px solid rgba(255, 92, 138, 0.15);
+  border: 1px solid rgba(200, 45, 124, 0.2);
   font-weight: 700;
   font-size: 1rem;
   padding: 14px 0;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(255, 92, 138, 0.03);
+  box-shadow: 0 8px 25px rgba(156, 25, 90, 0.08);
   transition: var(--transition-smooth);
   display: flex;
   align-items: center;
@@ -1547,21 +1573,21 @@ body.dark-theme .form-group input:focus, body.dark-theme .form-group textarea:fo
 
 .btn-submit-message:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 92, 138, 0.1);
-  background: linear-gradient(135deg, #ffffff 0%, #ffe5ec 100%);
-  border-color: rgba(255, 92, 138, 0.25);
+  box-shadow: 0 12px 30px rgba(200, 45, 124, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, var(--pink-pastel) 100%);
+  border-color: rgba(200, 45, 124, 0.35);
 }
 
 body.dark-theme .btn-submit-message {
-  background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-hover) 100%);
+  background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-secondary) 100%);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 25px rgba(255, 117, 143, 0.35);
+  box-shadow: 0 8px 25px rgba(200, 45, 124, 0.4);
 }
 
 body.dark-theme .btn-submit-message:hover {
   background: linear-gradient(135deg, var(--pink-accent-hover) 0%, var(--pink-accent) 100%);
-  box-shadow: 0 12px 30px rgba(255, 117, 143, 0.5);
+  box-shadow: 0 12px 30px rgba(200, 45, 124, 0.55);
   border-color: rgba(255, 255, 255, 0.45);
   color: #ffffff;
 }

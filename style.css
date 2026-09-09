@@ -180,15 +180,15 @@ body.dark-theme ::-webkit-scrollbar-thumb {
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px); /* Slightly lower blur to keep soft liquid outline structure */
-  opacity: 0.85;
+  filter: blur(120px);
+  opacity: 0.35; /* Subtle minimalist backdrop */
   animation: floatBubble 25s infinite alternate ease-in-out;
   transition: background 0.5s ease;
 }
 
 body.dark-theme .blob {
-  opacity: 0.45;
-  filter: blur(120px);
+  opacity: 0.18;
+  filter: blur(140px);
 }
 
 .blob-pink {
@@ -565,14 +565,14 @@ body.dark-theme .theme-toggle {
 body.dark-theme .btn-primary {
   background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-secondary) 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 25px rgba(200, 45, 124, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-theme .btn-primary:hover {
   background: linear-gradient(135deg, var(--pink-accent-hover) 0%, var(--pink-accent) 100%);
-  box-shadow: 0 12px 30px rgba(200, 45, 124, 0.55);
-  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.35);
   color: #ffffff;
 }
 
@@ -712,11 +712,11 @@ body.dark-theme .hero-cursive {
   gap: 15px;
 }
 
-/* Hero Image Wrapper (Clean Floating Graphic with Ambient Backdrop Glow Shadow) */
+/* Hero Image Wrapper (Shifted gracefully towards right) */
 .hero-image-wrapper {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
 }
@@ -730,16 +730,18 @@ body.dark-theme .hero-cursive {
   align-items: center;
   z-index: 10;
   perspective: 1000px;
+  margin-left: auto;
+  margin-right: -25px; /* Shifted slightly more to the right per user request */
 }
 
 .hero-photo-backdrop-glow {
   position: absolute;
-  width: 95%;
-  height: 95%;
-  top: 3%;
-  left: 3%;
-  background: radial-gradient(circle, rgba(200, 45, 124, 0.32) 0%, rgba(156, 25, 90, 0.2) 48%, transparent 75%);
-  filter: blur(55px);
+  width: 85%;
+  height: 85%;
+  top: 7%;
+  left: 7%;
+  background: radial-gradient(circle, rgba(200, 45, 124, 0.08) 0%, rgba(156, 25, 90, 0.03) 50%, transparent 70%);
+  filter: blur(40px);
   z-index: 1;
   pointer-events: none;
   border-radius: 50%;
@@ -747,37 +749,37 @@ body.dark-theme .hero-cursive {
 }
 
 body.dark-theme .hero-photo-backdrop-glow {
-  background: radial-gradient(circle, rgba(200, 45, 124, 0.48) 0%, rgba(156, 25, 90, 0.28) 48%, transparent 75%);
-  filter: blur(65px);
+  background: radial-gradient(circle, rgba(200, 45, 124, 0.12) 0%, rgba(156, 25, 90, 0.04) 50%, transparent 70%);
+  filter: blur(45px);
 }
 
 .hero-profile-img {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-height: 700px; /* Extra large height for prominent display */
+  max-height: 700px;
   object-fit: contain;
-  filter: drop-shadow(0 22px 45px rgba(156, 25, 90, 0.25));
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   transform-style: preserve-3d;
 }
 
 .hero-photo-container:hover .hero-profile-img {
-  transform: translateY(-8px) scale(1.02);
-  filter: drop-shadow(0 25px 50px rgba(156, 25, 90, 0.32));
+  transform: translateY(-5px) scale(1.01);
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.15));
 }
 
 .hero-photo-container:hover .hero-photo-backdrop-glow {
-  transform: scale(1.1);
-  opacity: 1;
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 body.dark-theme .hero-profile-img {
-  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 25px rgba(200, 45, 124, 0.3));
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
 }
 
 body.dark-theme .hero-photo-container:hover .hero-profile-img {
-  filter: drop-shadow(0 25px 55px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 35px rgba(200, 45, 124, 0.45));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.65));
 }
 
 @keyframes floatSparkle {
@@ -1581,14 +1583,14 @@ body.dark-theme .form-group input:focus, body.dark-theme .form-group textarea:fo
 body.dark-theme .btn-submit-message {
   background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-accent-secondary) 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 25px rgba(200, 45, 124, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-theme .btn-submit-message:hover {
   background: linear-gradient(135deg, var(--pink-accent-hover) 0%, var(--pink-accent) 100%);
-  box-shadow: 0 12px 30px rgba(200, 45, 124, 0.55);
-  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.35);
   color: #ffffff;
 }
 
@@ -1969,9 +1971,11 @@ body.dark-theme .footer {
   }
   .hero-image-wrapper {
     order: -1;
+    justify-content: center;
   }
   .hero-photo-container {
     max-width: 360px;
+    margin: 0 auto;
   }
   .hero-profile-img {
     max-height: 420px;

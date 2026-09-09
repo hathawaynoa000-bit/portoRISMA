@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. Init Scroll Reveal observers & Spy
     initScrollReveal();
-    setTimeout(updateActiveNav, 100);
+    setTimeout(handleScroll, 100);
   }
 
   // --- Render Projects Grid ---

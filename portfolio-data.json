@@ -121,52 +121,52 @@
   "certifications": [
     {
       "title": "Junior Graphic Designer (VSGA)",
-      "issuer": "Digital Talent Scholarship (Digitalent) - Kominfo RI",
+      "issuer": "Digital Talent Scholarship (Digitalent) - Ministry of Communication and Informatics (Kominfo RI)",
       "year": "2023",
       "image": "assets/certificates/cert_kominfo_vsga.png",
-      "description": "Sertifikasi Pelatihan Junior Graphic Designer dalam Program Vocational School Graduate Academy (VSGA) Kominfo - 67 Jam Pelatihan."
+      "description": "National competency certificate for Junior Graphic Designer under the Vocational School Graduate Academy (VSGA) - 67 Training Hours."
     },
     {
-      "title": "Sertifikat Kompetensi Keahlian SMK Multimedia",
+      "title": "Vocational Competency Certificate (UKK Multimedia)",
       "issuer": "PT. Mapan Global Film & SMKN 1 Lemahabang",
       "year": "2022",
       "image": "assets/certificates/cert_mapan_film.jpg",
-      "description": "Uji Kompetensi Keahlian (UKK) Multimedia bidang periklanan komersial dan produksi visual media tervalidasi industri."
+      "description": "Industry-validated vocational competency certificate in commercial advertising production and multimedia visual communications."
     },
     {
       "title": "Staff Innovation Creator",
       "issuer": "Komunitas Narasi Jawa Barat",
       "year": "2024 / 2025",
       "image": "assets/certificates/cert_org_p1.png",
-      "description": "Certificate of Participation sebagai Staff Innovation Creator Batch 2024/2025 dalam pengembangan materi kreatif dan program edukasi."
+      "description": "Certificate of Participation as Staff Innovation Creator for Batch 2024/2025, contributing to creative campaign development and educational initiatives."
     },
     {
-      "title": "Ketua Bidang Humas (Tahun 2024)",
+      "title": "Head of Public Relations Division",
       "issuer": "Jabar Bergerak Zillenial Kabupaten Cirebon",
       "year": "2024",
       "image": "assets/certificates/cert_org_p2.png",
-      "description": "Sertifikat Kepengurusan atas dedikasi dan kontribusi sebagai Ketua Bidang Hubungan Masyarakat (Humas) Periode 2024."
+      "description": "Leadership certificate recognizing exemplary dedication and leadership as the Head of Public Relations Division for the 2024 organizational tenure."
     },
     {
-      "title": "Anggota Bidang Humas (Tahun 2023)",
+      "title": "Public Relations Division Member",
       "issuer": "Jabar Bergerak Zillenial Kabupaten Cirebon",
       "year": "2023",
       "image": "assets/certificates/cert_org_p3.png",
-      "description": "Sertifikat Kepengurusan atas dedikasi luar biasa dalam pengelolaan media sosial dan hubungan masyarakat Periode 2023."
+      "description": "Certificate of Contribution recognizing active dedication in social media content production, event coverage, and public communication in 2023."
     },
     {
       "title": "English Language Proficiency Test (ELProTe)",
-      "issuer": "Pusat Bahasa UIN Siber Syekh Nurjati Cirebon",
+      "issuer": "Language Center of UIN Siber Syekh Nurjati Cirebon",
       "year": "2026 - 2028",
       "image": "assets/certificates/cert_language_p1.png",
-      "description": "Official English Language Proficiency Test credential dengan total skor 577 (Listening: 61, Structure: 55, Reading: 57)."
+      "description": "Official English language proficiency test credential with a total score of 577 (Listening: 61, Structure: 55, Reading: 57)."
     },
     {
       "title": "Arabic Language Proficiency Test",
-      "issuer": "Pusat Bahasa UIN Siber Syekh Nurjati Cirebon",
+      "issuer": "Language Center of UIN Siber Syekh Nurjati Cirebon",
       "year": "2026 - 2028",
       "image": "assets/certificates/cert_language_p2.png",
-      "description": "Sertifikat Kemahiran Bahasa Arab (Ikhtibar fi al-Lughah al-'Arabiyyah) dengan total skor 367."
+      "description": "Official Arabic language proficiency certificate (Ikhtibar fi al-Lughah al-'Arabiyyah) with a total score of 367."
     }
   ],
   "projects": [

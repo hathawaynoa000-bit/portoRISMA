@@ -631,9 +631,9 @@ body.dark-theme .btn-secondary:hover {
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
   width: 100%;
 }
 
@@ -798,13 +798,15 @@ body.dark-theme .hero-stat-divider {
 .hero-photo-container {
   position: relative;
   width: 100%;
-  max-width: 490px;
+  max-width: 535px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
   perspective: 1000px;
   margin-left: auto;
+  transform: translateY(-24px);
+  will-change: transform;
 }
 
 /* Floating Creative Design Badges */
@@ -890,12 +892,13 @@ body.dark-theme .hero-photo-backdrop-glow {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-height: 550px;
+  max-height: 590px;
   object-fit: contain;
   /* Natural shadow + thin delicate pink ambient glow */
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12)) drop-shadow(0 0 16px rgba(200, 45, 124, 0.16));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .hero-photo-container:hover .hero-profile-img {
@@ -2270,13 +2273,17 @@ body.dark-theme .footer {
   }
   .hero-photo-container {
     max-width: 360px;
-    margin: 0 auto;
+    margin: 0 auto 15px;
+    transform: translateY(0);
   }
   .hero-profile-img {
     max-height: 420px;
+    filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.12));
+    will-change: auto;
   }
   .hero-photo-backdrop-glow {
-    filter: blur(35px);
+    filter: blur(24px);
+    opacity: 0.6;
   }
   .floating-badge {
     display: none; /* Hide floating badges on mobile screens to keep layout clean */

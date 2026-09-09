@@ -75,42 +75,48 @@ document.addEventListener('DOMContentLoaded', () => {
     themeIcon.className = isDark ? 'fa-regular fa-moon' : 'fa-regular fa-sun';
   });
 
-  // --- Active Nav on Scroll & Load (Scroll Spy) ---
-  function updateActiveNav() {
-    let currentSection = 'hero'; // Default to hero/Home
+  // --- High Performance Scroll Handler (rAF Throttling + Passive Listener) ---
+  let isScrollTicking = false;
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    // Sticky Navbar toggle
+    if (scrollY > 50) {
+      if (!navbar.classList.contains('scrolled')) navbar.classList.add('scrolled');
+    } else {
+      if (navbar.classList.contains('scrolled')) navbar.classList.remove('scrolled');
+    }
+
+    // Active Section Scroll Spy
+    let currentSection = 'hero';
     const sections = document.querySelectorAll('section');
-    
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 190;
-      if (window.scrollY >= sectionTop) {
+      if (scrollY >= sectionTop) {
         currentSection = section.getAttribute('id');
       }
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('active');
       const href = link.getAttribute('href');
       if (href === `#${currentSection}`) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
+
+    isScrollTicking = false;
   }
 
-  // Sticky Navbar class toggle
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (!isScrollTicking) {
+      window.requestAnimationFrame(handleScroll);
+      isScrollTicking = true;
     }
-  });
+  }, { passive: true });
 
-  window.addEventListener('scroll', updateActiveNav);
-  window.addEventListener('scroll', () => {
-    // Sync active nav item on scroll spy
-    updateActiveNav();
-  });
-  window.addEventListener('hashchange', updateActiveNav);
+  window.addEventListener('hashchange', handleScroll);
 
   // --- Mobile Menu Toggle ---
   mobileNavToggle.addEventListener('click', () => {

@@ -692,7 +692,7 @@ body.dark-theme .hero-kicker-badge {
 }
 
 body.dark-theme .hero-cursive {
-  color: var(--pink-pastel);
+  color: #ff8fa3;
 }
 
 .hero-bio {
@@ -1536,9 +1536,9 @@ body.dark-theme .timeline-item::before {
 }
 
 body.dark-theme .timeline-period {
-  background: rgba(200, 45, 124, 0.2);
-  border-color: rgba(200, 45, 124, 0.35);
-  color: var(--pink-pastel);
+  background: rgba(220, 70, 140, 0.22);
+  border-color: rgba(220, 70, 140, 0.45);
+  color: #ffb3c6;
 }
 
 .timeline-title {
@@ -1674,6 +1674,12 @@ body.dark-theme .cert-image-box {
   border-radius: 6px;
   align-self: flex-start;
   margin-bottom: 12px;
+}
+
+body.dark-theme .cert-year {
+  background: rgba(220, 70, 140, 0.22);
+  border-color: rgba(220, 70, 140, 0.45);
+  color: #ffb3c6;
 }
 
 .cert-title {

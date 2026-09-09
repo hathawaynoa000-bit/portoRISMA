@@ -133,9 +133,9 @@ ul {
 /* Containers */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
 }
 
 section {
@@ -616,67 +616,24 @@ body.dark-theme .btn-secondary:hover {
 
 .hero-container {
   display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 30px;
-  max-width: 1360px; /* Wider container so photo can reach further right */
+  gap: 48px;
+  width: 100%;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.hero-badge {
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: var(--text-dark);
-  padding: 8px 20px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 4px 15px rgba(255, 92, 138, 0.02);
-}
-
-body.dark-theme .hero-badge {
-  background: rgba(21, 16, 23, 0.5);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.badge-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #55a630;
-  margin-right: 10px;
-}
-
-.badge-dot.animate-pulse {
-  animation: pulseDot 2s infinite;
-}
-
-@keyframes pulseDot {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(85, 166, 48, 0.7);
-  }
-  50% {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 5px rgba(85, 166, 48, 0);
-  }
+  max-width: 620px;
 }
 
 .hero-title {
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  letter-spacing: -2px;
-  margin-bottom: 10px;
+  letter-spacing: -1.5px;
+  margin-bottom: 8px;
   color: var(--navy-deep);
 }
 
@@ -690,7 +647,7 @@ body.dark-theme .hero-badge {
   font-family: 'Caveat', cursive;
   font-size: 2.1rem;
   color: var(--pink-accent-secondary);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: 700;
   transform: rotate(-1deg);
   display: inline-block;
@@ -703,9 +660,34 @@ body.dark-theme .hero-cursive {
 .hero-bio {
   font-size: 1.05rem;
   color: var(--text-muted);
-  margin-bottom: 35px;
-  max-width: 580px;
+  margin-bottom: 24px;
   line-height: 1.7;
+}
+
+/* Quick contact pills in hero matching reference */
+.hero-contact-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 32px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-pill i {
+  color: var(--pink-accent);
+  font-size: 0.95rem;
+}
+
+body.dark-theme .hero-pill {
+  color: var(--text-muted);
 }
 
 .hero-actions {
@@ -713,7 +695,7 @@ body.dark-theme .hero-cursive {
   gap: 15px;
 }
 
-/* Hero Image Wrapper (Shifted gracefully towards right edge) */
+/* Hero Image Wrapper (Clean Right-Aligned Graphic) */
 .hero-image-wrapper {
   position: relative;
   display: flex;
@@ -725,14 +707,13 @@ body.dark-theme .hero-cursive {
 .hero-photo-container {
   position: relative;
   width: 100%;
-  max-width: 700px; /* Extra large photo display */
+  max-width: 490px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   z-index: 10;
   perspective: 1000px;
   margin-left: auto;
-  transform: translateX(45px); /* Shifted further to the right edge */
 }
 
 .hero-photo-backdrop-glow {
@@ -758,7 +739,7 @@ body.dark-theme .hero-photo-backdrop-glow {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-height: 700px;
+  max-height: 550px;
   object-fit: contain;
   /* Natural shadow + thin delicate pink ambient glow */
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12)) drop-shadow(0 0 16px rgba(200, 45, 124, 0.16));

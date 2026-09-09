@@ -108,7 +108,7 @@ const portfolioData = {
       { "name": "Canva", "level": 5 },
       { "name": "Microsoft Office", "level": 5 },
       { "name": "Adobe Illustrator", "level": 4 },
-      { "name": "Adobe Photoshop", "level": 4 },
+      { "name": "Adobe Photoshop", "level": 3 },
       { "name": "CapCut / Video Editing", "level": 4 }
     ],
     "soft_skills": [

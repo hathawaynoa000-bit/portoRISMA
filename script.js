@@ -275,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
       skillItem.innerHTML = `
         <div class="skill-info">
           <span>${skill.name}</span>
-          <span>${percentage}%</span>
         </div>
         <div class="skill-bar-wrapper">
           <div class="skill-bar" data-width="${percentage}%"></div>

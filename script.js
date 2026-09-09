@@ -488,24 +488,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Skill Bar Animation ---
   function animateSkillBars() {
+    const bars = document.querySelectorAll('.skill-bar');
+    if (window.innerWidth <= 768 || !('IntersectionObserver' in window)) {
+      bars.forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+      });
+      return;
+    }
+
     const barObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const bar = entry.target;
-          const width = bar.getAttribute('data-width');
-          bar.style.width = width;
+          bar.style.width = bar.getAttribute('data-width');
           barObserver.unobserve(bar);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05, rootMargin: '50px 0px 50px 0px' });
 
-    document.querySelectorAll('.skill-bar').forEach(bar => {
+    bars.forEach(bar => {
       barObserver.observe(bar);
     });
+
+    // Safety fallback
+    setTimeout(() => {
+      bars.forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+      });
+    }, 1500);
   }
 
   // --- Intersection Observer for Scroll Reveal ---
   function initScrollReveal() {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    
+    // On mobile screens or if IntersectionObserver is not supported, reveal immediately
+    if (window.innerWidth <= 768 || !('IntersectionObserver' in window)) {
+      reveals.forEach(el => el.classList.add('active'));
+      return;
+    }
+
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -514,13 +536,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.01,
+      rootMargin: '100px 0px 100px 0px'
     });
 
-    document.querySelectorAll('.scroll-reveal').forEach(el => {
+    reveals.forEach(el => {
       revealObserver.observe(el);
     });
+
+    // Mobile & slow connection fallback: ensure everything is visible after 1.2s
+    setTimeout(() => {
+      reveals.forEach(el => el.classList.add('active'));
+    }, 1200);
   }
 
   // --- Start App ---

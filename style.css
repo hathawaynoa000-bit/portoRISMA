@@ -616,9 +616,10 @@ body.dark-theme .btn-secondary:hover {
 
 .hero-container {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 0.88fr 1.12fr;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
+  max-width: 1360px; /* Wider container so photo can reach further right */
 }
 
 .hero-content {
@@ -712,7 +713,7 @@ body.dark-theme .hero-cursive {
   gap: 15px;
 }
 
-/* Hero Image Wrapper (Shifted gracefully towards right) */
+/* Hero Image Wrapper (Shifted gracefully towards right edge) */
 .hero-image-wrapper {
   position: relative;
   display: flex;
@@ -724,24 +725,24 @@ body.dark-theme .hero-cursive {
 .hero-photo-container {
   position: relative;
   width: 100%;
-  max-width: 660px; /* Extra large photo display */
+  max-width: 700px; /* Extra large photo display */
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   z-index: 10;
   perspective: 1000px;
   margin-left: auto;
-  margin-right: -25px; /* Shifted slightly more to the right per user request */
+  transform: translateX(45px); /* Shifted further to the right edge */
 }
 
 .hero-photo-backdrop-glow {
   position: absolute;
-  width: 85%;
-  height: 85%;
-  top: 7%;
-  left: 7%;
-  background: radial-gradient(circle, rgba(200, 45, 124, 0.08) 0%, rgba(156, 25, 90, 0.03) 50%, transparent 70%);
-  filter: blur(40px);
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  background: radial-gradient(circle, rgba(200, 45, 124, 0.2) 0%, rgba(156, 25, 90, 0.08) 48%, transparent 72%);
+  filter: blur(48px);
   z-index: 1;
   pointer-events: none;
   border-radius: 50%;
@@ -749,8 +750,8 @@ body.dark-theme .hero-cursive {
 }
 
 body.dark-theme .hero-photo-backdrop-glow {
-  background: radial-gradient(circle, rgba(200, 45, 124, 0.12) 0%, rgba(156, 25, 90, 0.04) 50%, transparent 70%);
-  filter: blur(45px);
+  background: radial-gradient(circle, rgba(200, 45, 124, 0.28) 0%, rgba(156, 25, 90, 0.12) 48%, transparent 74%);
+  filter: blur(52px);
 }
 
 .hero-profile-img {
@@ -759,27 +760,28 @@ body.dark-theme .hero-photo-backdrop-glow {
   width: 100%;
   max-height: 700px;
   object-fit: contain;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
+  /* Natural shadow + thin delicate pink ambient glow */
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12)) drop-shadow(0 0 16px rgba(200, 45, 124, 0.16));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   transform-style: preserve-3d;
 }
 
 .hero-photo-container:hover .hero-profile-img {
-  transform: translateY(-5px) scale(1.01);
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.15));
+  transform: translateY(-6px) scale(1.01);
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.16)) drop-shadow(0 0 22px rgba(200, 45, 124, 0.24));
 }
 
 .hero-photo-container:hover .hero-photo-backdrop-glow {
-  transform: scale(1.05);
-  opacity: 0.8;
+  transform: scale(1.06);
+  opacity: 0.95;
 }
 
 body.dark-theme .hero-profile-img {
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 18px rgba(200, 45, 124, 0.22));
 }
 
 body.dark-theme .hero-photo-container:hover .hero-profile-img {
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.65));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 26px rgba(200, 45, 124, 0.32));
 }
 
 @keyframes floatSparkle {

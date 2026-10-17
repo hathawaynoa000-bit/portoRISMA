@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -75,12 +75,12 @@
           <h1 class="hero-title animate-fade-in-up">
             Rismatul <span class="gradient-text">Maulawati</span>
           </h1>
-          <p class="hero-cursive animate-fade-in-up-delay-1">Social Media Specialist & Graphic Designer ✨</p>
+          <p class="hero-cursive animate-fade-in-up-delay-1">Social Media Specialist & Graphic Designer</p>
           <p class="hero-bio animate-fade-in-up-delay-2"></p> <!-- Dynamic Bio matching JSON data -->
           
           <div class="hero-contact-pills animate-fade-in-up-delay-2">
             <span class="hero-pill"><i class="fa-solid fa-location-dot"></i> Cirebon, Jawa Barat</span>
-            <span class="hero-pill"><i class="fa-solid fa-phone"></i> 083116349988</span>
+            <span class="hero-pill"><i class="fa-solid fa-phone"></i> +62 83116349988</span>
             <span class="hero-pill"><i class="fa-solid fa-envelope"></i> rismamaula960@gmail.com</span>
           </div>
 
@@ -93,7 +93,7 @@
         <div class="hero-image-wrapper animate-zoom-in">
           <div class="hero-photo-container">
             <div class="hero-photo-backdrop-glow"></div>
-            <img id="heroImgSrc" src="assets/Group 44.png" alt="Rismatul Maulawati" class="hero-profile-img">
+            <img id="heroImgSrc" src="assets/profile_formal.png" alt="Rismatul Maulawati" class="hero-profile-img">
           </div>
         </div>
       </div>
@@ -294,7 +294,7 @@
               </div>
               <div class="contact-text-wrapper">
                 <span class="contact-label">Phone / WhatsApp</span>
-                <span class="contact-value" id="contactPhoneVal">083116349988</span>
+                <span class="contact-value" id="contactPhoneVal">+62 83116349988</span>
               </div>
             </div>
 
@@ -314,11 +314,11 @@
             <div class="form-row-two">
               <div class="form-group">
                 <label for="contactName">Full Name</label>
-                <input type="text" id="contactName" placeholder="e.g. Jane Doe" required>
+                <input type="text" id="contactName" placeholder="Full Name" required>
               </div>
               <div class="form-group">
                 <label for="contactEmail">Email Address</label>
-                <input type="email" id="contactEmail" placeholder="jane@example.com" required>
+                <input type="email" id="contactEmail" placeholder="fullname@mail.com" required>
               </div>
             </div>
             
@@ -346,8 +346,15 @@
   <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
     <div class="lightbox-content">
-      <div class="lightbox-image-container">
+      <div class="lightbox-image-container" id="lightboxImageContainer">
+        <button class="lightbox-nav-btn prev" id="lightboxPrev" aria-label="Previous slide" title="Previous (Left Arrow)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
         <img id="lightboxImg" src="" alt="Project Preview">
+        <button class="lightbox-nav-btn next" id="lightboxNext" aria-label="Next slide" title="Next (Right Arrow)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-slide-counter" id="lightboxCounter">1 / 1</div>
       </div>
       <div class="lightbox-details glass-card">
         <div class="lightbox-meta">

@@ -52,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxTitle = document.getElementById('lightboxTitle');
   const lightboxDesc = document.getElementById('lightboxDesc');
   const lightboxToolsList = document.getElementById('lightboxToolsList');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+  const lightboxImageContainer = document.getElementById('lightboxImageContainer');
+
+  // Lightbox Gallery State
+  let currentGallery = [];
+  let currentSlideIndex = 0;
   
   // Database store
   let projectsData = [];
@@ -140,31 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Hero 3D Interactive Parallax & Tilt Animation ---
-  const heroImageContainer = document.querySelector('.hero-photo-container') || document.querySelector('.hero-blob-container-new');
-  const heroProfileImg = document.querySelector('.hero-profile-img') || document.querySelector('.hero-blob-card');
-  
-  if (heroImageContainer && heroProfileImg) {
-    heroImageContainer.addEventListener('mousemove', (e) => {
-      const rect = heroImageContainer.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      // Gentle tilt rotation of 8 degrees
-      const rotateX = ((centerY - y) / centerY) * 8;
-      const rotateY = ((x - centerX) / centerX) * 8;
-      
-      heroProfileImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
-    });
-    
-    heroImageContainer.addEventListener('mouseleave', () => {
-      heroProfileImg.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-    });
-  }
-
   // --- Load Portfolio Data (Direct from Local Variable to Bypass CORS) ---
   function loadPortfolioData() {
     try {
@@ -189,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Profile / Hero Section
     heroBio.textContent = profile.bio;
     if (heroCursive) {
-      heroCursive.textContent = profile.title + " ✨";
+      heroCursive.textContent = profile.title;
     }
     if (heroImgSrc) {
       heroImgSrc.src = profile.profile_image;
@@ -393,17 +376,24 @@ document.addEventListener('DOMContentLoaded', () => {
       card.dataset.id = project.id;
       
       const toolsHTML = project.tools.map(tool => `<span class="project-tool-tag">${tool}</span>`).join('');
+      const galleryBadgeHTML = (project.gallery && project.gallery.length > 1)
+        ? `<span class="project-gallery-badge"><i class="fa-solid fa-layer-group"></i> ${project.gallery.length} Slides</span>`
+        : '';
       
+      const categories = Array.isArray(project.category) ? project.category : [project.category];
+      const categoriesHTML = categories.map(cat => `<span class="project-category">${cat}</span>`).join(' ');
+
       card.innerHTML = `
         <div class="project-image-box">
           <img src="${project.image}" alt="${project.title}" class="project-thumbnail" loading="lazy">
+          ${galleryBadgeHTML}
           <div class="project-overlay">
             <div class="project-view-icon"><i class="fa-solid fa-expand"></i></div>
           </div>
         </div>
         <div class="project-info-box">
           <div class="project-meta">
-            <span class="project-category">${project.category}</span>
+            <div class="project-categories-wrap">${categoriesHTML}</div>
             <span class="project-period">${project.period}</span>
           </div>
           <h3 class="project-card-title">${project.title}</h3>
@@ -429,24 +419,90 @@ document.addEventListener('DOMContentLoaded', () => {
       if (filterValue === 'all') {
         renderProjects(projectsData);
       } else {
-        const filteredProjects = projectsData.filter(p => p.category === filterValue);
+        const filteredProjects = projectsData.filter(p => {
+          if (Array.isArray(p.category)) {
+            return p.category.includes(filterValue);
+          }
+          return p.category === filterValue;
+        });
         renderProjects(filteredProjects);
       }
     });
   });
+
+  // --- Lightbox Slide Navigation ---
+  function updateLightboxSlide(index) {
+    if (!currentGallery || currentGallery.length === 0) return;
+
+    currentSlideIndex = (index + currentGallery.length) % currentGallery.length;
+
+    // Smooth transition
+    lightboxImg.style.opacity = '0.35';
+    lightboxImg.src = currentGallery[currentSlideIndex];
+
+    lightboxImg.onload = () => {
+      lightboxImg.style.opacity = '1';
+    };
+    setTimeout(() => {
+      lightboxImg.style.opacity = '1';
+    }, 120);
+
+    if (currentGallery.length > 1) {
+      if (lightboxPrev) lightboxPrev.classList.remove('hidden');
+      if (lightboxNext) lightboxNext.classList.remove('hidden');
+      if (lightboxCounter) {
+        lightboxCounter.classList.remove('hidden');
+        lightboxCounter.textContent = `${currentSlideIndex + 1} / ${currentGallery.length}`;
+      }
+    } else {
+      if (lightboxPrev) lightboxPrev.classList.add('hidden');
+      if (lightboxNext) lightboxNext.classList.add('hidden');
+      if (lightboxCounter) lightboxCounter.classList.add('hidden');
+    }
+  }
+
+  function nextSlide() {
+    if (currentGallery.length > 1) {
+      updateLightboxSlide(currentSlideIndex + 1);
+    }
+  }
+
+  function prevSlide() {
+    if (currentGallery.length > 1) {
+      updateLightboxSlide(currentSlideIndex - 1);
+    }
+  }
+
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      prevSlide();
+    });
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      nextSlide();
+    });
+  }
 
   // --- Lightbox Modal Handlers ---
   function openLightbox(projectId) {
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
 
-    lightboxImg.src = project.image;
+    currentGallery = (project.gallery && project.gallery.length > 0) ? project.gallery : [project.image];
+    currentSlideIndex = 0;
+
     lightboxImg.alt = project.title;
-    lightboxCategory.textContent = project.category;
+    lightboxCategory.textContent = Array.isArray(project.category) ? project.category.join(' • ') : project.category;
     lightboxDate.innerHTML = `<i class="fa-regular fa-calendar"></i> ${project.period}`;
     lightboxTitle.textContent = project.title;
     lightboxDesc.textContent = project.description;
     lightboxToolsList.innerHTML = project.tools.map(tool => `<span class="project-tool-tag">${tool}</span>`).join('');
+
+    updateLightboxSlide(0);
 
     lightboxModal.classList.add('open');
     lightboxModal.setAttribute('aria-hidden', 'false');
@@ -455,13 +511,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lightbox for Certifications
   function openCertLightbox(cert) {
-    lightboxImg.src = cert.image;
+    currentGallery = [cert.image];
+    currentSlideIndex = 0;
+
     lightboxImg.alt = cert.title;
     lightboxCategory.textContent = "Certification Credential";
     lightboxDate.innerHTML = `<i class="fa-regular fa-calendar"></i> Year: ${cert.year}`;
     lightboxTitle.textContent = cert.title;
     lightboxDesc.textContent = cert.description;
     lightboxToolsList.innerHTML = `<span class="project-tool-tag">${cert.issuer}</span>`;
+
+    updateLightboxSlide(0);
 
     lightboxModal.classList.add('open');
     lightboxModal.setAttribute('aria-hidden', 'false');
@@ -472,9 +532,11 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxModal.classList.remove('open');
     lightboxModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    currentGallery = [];
+    currentSlideIndex = 0;
     setTimeout(() => {
       lightboxImg.src = '';
-    }, 400);
+    }, 350);
   }
 
   lightboxClose.addEventListener('click', closeLightbox);
@@ -485,11 +547,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Keyboard navigation: Escape, Left Arrow, Right Arrow
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightboxModal.classList.contains('open')) {
+    if (!lightboxModal.classList.contains('open')) return;
+
+    if (e.key === 'Escape') {
       closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+    } else if (e.key === 'ArrowLeft') {
+      prevSlide();
     }
   });
+
+  // Touch Swipe for Mobile Gallery in Lightbox
+  let touchStartX = 0;
+  let touchEndX = 0;
+  if (lightboxImageContainer) {
+    lightboxImageContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxImageContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) > 40) {
+        if (swipeDistance < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }, { passive: true });
+  }
 
   // --- Skill Bar Animation ---
   function animateSkillBars() {

@@ -4,12 +4,12 @@
     "title": "Social Media Specialist & Graphic Designer",
     "bio": "Fresh graduate with a Bachelor's degree in Islamic Guidance and Counseling, with a strong background in Multimedia and experience in Social Media Management, Content Creation, and Graphic Design.",
     "about_bio": "Fresh graduate with a Bachelor's degree in Islamic Guidance and Counseling, with a strong background in Multimedia and experience in Social Media Management, Content Creation, and Graphic Design. Experienced in managing social media, developing creative content, designing visual materials, copywriting, branding, and producing photo and video content. Able to manage creative projects independently from planning to publication, with strong communication, creativity, and attention to detail. Interested in pursuing a career as a Social Media Specialist and Graphic Designer.",
-    "profile_image": "assets/Group 44.png",
+    "profile_image": "assets/profile_formal.png",
     "contact": {
       "email": "rismamaula960@gmail.com",
       "instagram": "@rismamaulaa",
       "instagram_url": "https://instagram.com/rismamaulaa",
-      "phone": "083116349988",
+      "phone": "+62 83116349988",
       "location": "Cirebon, Jawa Barat, Indonesia"
     },
     "languages": "Languages: Indonesian (Native) & English (Intermediate - ELProTe Certified)"
@@ -170,6 +170,36 @@
     }
   ],
   "projects": [
+    {
+      "id": "project-jbz-kabcirebon",
+      "title": "Jabar Bergerak Zillenial (@jbzkabcirebon_)",
+      "category": ["Social Media", "Graphic Design"],
+      "period": "March 2023 - August 2025",
+      "tools": ["Canva", "Social Media Management", "Copywriting", "Content Planning"],
+      "description": "Comprehensive creative social media management for @jbzkabcirebon_, covering Instagram Story series, volunteer recruitment campaigns, community donation drives, and official Instagram feed publications.",
+      "image": "assets/4.png",
+      "gallery": [
+        "assets/4.png",
+        "assets/5.png",
+        "assets/6.png",
+        "assets/7.png",
+        "assets/8.png"
+      ]
+    },
+    {
+      "id": "project-bhakti-caruban",
+      "title": "Bhakti Caruban Social Campaign (@bhakticaruban)",
+      "category": ["Social Media", "Graphic Design"],
+      "period": "2023 - 2024",
+      "tools": ["Canva", "Graphic Design", "Photography", "Videography"],
+      "description": "Visual identity, volunteer registration collateral, sponsorship story packages, and cultural philosophy feeds designed for the Bhakti Caruban program by Jabar Bergerak Zillenial.",
+      "image": "assets/9.png",
+      "gallery": [
+        "assets/9.png",
+        "assets/10.png",
+        "assets/11.png"
+      ]
+    },
     {
       "id": "project-social-media",
       "title": "Social Media Marketing & Visual Branding",

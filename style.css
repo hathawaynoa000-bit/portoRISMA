@@ -2121,28 +2121,138 @@ body.dark-theme .lightbox-nav-btn {
   display: none !important;
 }
 
-.lightbox-slide-counter {
+/* Lightbox Carousel Slide Directional Animations */
+@keyframes slideInRight {
+  from {
+    opacity: 0.25;
+    transform: translateX(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0.25;
+    transform: translateX(-40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Lightbox Bottom Bar (Counter + Interactive Dots) */
+.lightbox-bottom-bar {
   position: absolute;
   bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(18, 22, 32, 0.82);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(18, 22, 32, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px 16px;
   border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.lightbox-bottom-bar.hidden {
+  display: none !important;
+}
+
+.lightbox-slide-counter {
+  color: #ffffff;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.6px;
-  z-index: 10;
-  pointer-events: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  white-space: nowrap;
 }
 
-.lightbox-slide-counter.hidden {
-  display: none !important;
+.lightbox-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lightbox-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lightbox-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.lightbox-dot.active {
+  background: var(--pink-accent);
+  width: 22px;
+  border-radius: 10px;
+}
+
+/* Slide Specific Subtitle Badge & Caption in Details */
+.lightbox-slide-subtitle {
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.slide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(217, 61, 134, 0.12);
+  color: var(--pink-accent);
+  border: 1px solid rgba(217, 61, 134, 0.25);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+body.dark-theme .slide-badge {
+  background: rgba(217, 61, 134, 0.2);
+  border-color: rgba(217, 61, 134, 0.4);
+  color: #ff8fa3;
+}
+
+.slide-highlight-caption {
+  display: block;
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+}
+
+body.dark-theme .slide-highlight-caption {
+  color: #ffffff;
+}
+
+.slide-global-desc {
+  display: block;
+  opacity: 0.82;
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .lightbox-details {
@@ -2595,10 +2705,20 @@ body.dark-theme .footer {
   .lightbox-nav-btn.next {
     right: 8px;
   }
-  .lightbox-slide-counter {
+  .lightbox-bottom-bar {
     bottom: 8px;
-    padding: 3px 10px;
+    padding: 4px 12px;
+    gap: 8px;
+  }
+  .lightbox-slide-counter {
     font-size: 0.72rem;
+  }
+  .lightbox-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .lightbox-dot.active {
+    width: 16px;
   }
 }
 

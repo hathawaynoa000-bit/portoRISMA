@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lightbox Gallery State
   let currentGallery = [];
   let currentSlideIndex = 0;
+  let currentProjectDesc = '';
   
   // Database store
   let projectsData = [];
@@ -431,45 +432,85 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Lightbox Slide Navigation ---
-  function updateLightboxSlide(index) {
+  function updateLightboxSlide(index, direction = 'next') {
     if (!currentGallery || currentGallery.length === 0) return;
 
     currentSlideIndex = (index + currentGallery.length) % currentGallery.length;
 
-    // Smooth transition
-    lightboxImg.style.opacity = '0.35';
-    lightboxImg.src = currentGallery[currentSlideIndex];
+    const currentItem = currentGallery[currentSlideIndex];
+    const imgSrc = typeof currentItem === 'string' ? currentItem : currentItem.src;
+    const slideTitle = typeof currentItem === 'object' ? currentItem.title : '';
+    const slideDesc = typeof currentItem === 'object' ? currentItem.caption : '';
 
-    lightboxImg.onload = () => {
-      lightboxImg.style.opacity = '1';
-    };
-    setTimeout(() => {
-      lightboxImg.style.opacity = '1';
-    }, 120);
+    // Apply tactile horizontal slide animation
+    lightboxImg.classList.remove('slide-in-right', 'slide-in-left');
+    void lightboxImg.offsetWidth; // Force reflow to retrigger animation
+    lightboxImg.classList.add(direction === 'prev' ? 'slide-in-left' : 'slide-in-right');
 
+    lightboxImg.src = imgSrc;
+
+    // Update slide specific subtitle badge in details
+    const lightboxSlideSubtitle = document.getElementById('lightboxSlideSubtitle');
+    if (lightboxSlideSubtitle) {
+      if (slideTitle && currentGallery.length > 1) {
+        lightboxSlideSubtitle.style.display = 'block';
+        lightboxSlideSubtitle.innerHTML = `<span class="slide-badge"><i class="fa-solid fa-layer-group"></i> Slide ${currentSlideIndex + 1}: ${slideTitle}</span>`;
+      } else {
+        lightboxSlideSubtitle.style.display = 'none';
+        lightboxSlideSubtitle.innerHTML = '';
+      }
+    }
+
+    // Update description with slide specific caption
+    if (slideDesc && currentGallery.length > 1) {
+      lightboxDesc.innerHTML = `<span class="slide-highlight-caption">${slideDesc}</span><span class="slide-global-desc">${currentProjectDesc}</span>`;
+    } else {
+      lightboxDesc.textContent = currentProjectDesc;
+    }
+
+    // Update Counter & Dots
+    const bottomBar = document.getElementById('lightboxBottomBar');
     if (currentGallery.length > 1) {
       if (lightboxPrev) lightboxPrev.classList.remove('hidden');
       if (lightboxNext) lightboxNext.classList.remove('hidden');
+      if (bottomBar) bottomBar.classList.remove('hidden');
       if (lightboxCounter) {
-        lightboxCounter.classList.remove('hidden');
         lightboxCounter.textContent = `${currentSlideIndex + 1} / ${currentGallery.length}`;
       }
+      renderLightboxDots();
     } else {
       if (lightboxPrev) lightboxPrev.classList.add('hidden');
       if (lightboxNext) lightboxNext.classList.add('hidden');
-      if (lightboxCounter) lightboxCounter.classList.add('hidden');
+      if (bottomBar) bottomBar.classList.add('hidden');
     }
+  }
+
+  function renderLightboxDots() {
+    const dotsContainer = document.getElementById('lightboxDots');
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    currentGallery.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `lightbox-dot ${idx === currentSlideIndex ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dir = idx >= currentSlideIndex ? 'next' : 'prev';
+        updateLightboxSlide(idx, dir);
+      });
+      dotsContainer.appendChild(dot);
+    });
   }
 
   function nextSlide() {
     if (currentGallery.length > 1) {
-      updateLightboxSlide(currentSlideIndex + 1);
+      updateLightboxSlide(currentSlideIndex + 1, 'next');
     }
   }
 
   function prevSlide() {
     if (currentGallery.length > 1) {
-      updateLightboxSlide(currentSlideIndex - 1);
+      updateLightboxSlide(currentSlideIndex - 1, 'prev');
     }
   }
 
@@ -494,15 +535,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     currentGallery = (project.gallery && project.gallery.length > 0) ? project.gallery : [project.image];
     currentSlideIndex = 0;
+    currentProjectDesc = project.description;
 
     lightboxImg.alt = project.title;
     lightboxCategory.textContent = Array.isArray(project.category) ? project.category.join(' • ') : project.category;
     lightboxDate.innerHTML = `<i class="fa-regular fa-calendar"></i> ${project.period}`;
     lightboxTitle.textContent = project.title;
-    lightboxDesc.textContent = project.description;
     lightboxToolsList.innerHTML = project.tools.map(tool => `<span class="project-tool-tag">${tool}</span>`).join('');
 
-    updateLightboxSlide(0);
+    updateLightboxSlide(0, 'next');
 
     lightboxModal.classList.add('open');
     lightboxModal.setAttribute('aria-hidden', 'false');
@@ -513,15 +554,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function openCertLightbox(cert) {
     currentGallery = [cert.image];
     currentSlideIndex = 0;
+    currentProjectDesc = cert.description;
 
     lightboxImg.alt = cert.title;
     lightboxCategory.textContent = "Certification Credential";
     lightboxDate.innerHTML = `<i class="fa-regular fa-calendar"></i> Year: ${cert.year}`;
     lightboxTitle.textContent = cert.title;
-    lightboxDesc.textContent = cert.description;
     lightboxToolsList.innerHTML = `<span class="project-tool-tag">${cert.issuer}</span>`;
 
-    updateLightboxSlide(0);
+    updateLightboxSlide(0, 'next');
 
     lightboxModal.classList.add('open');
     lightboxModal.setAttribute('aria-hidden', 'false');

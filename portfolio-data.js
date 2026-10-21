@@ -182,11 +182,31 @@ const portfolioData = {
       "description": "Comprehensive creative social media management for @jbzkabcirebon_, covering Instagram Story series, volunteer recruitment campaigns, community donation drives, and official Instagram feed publications.",
       "image": "assets/4.png",
       "gallery": [
-        "assets/4.png",
-        "assets/5.png",
-        "assets/6.png",
-        "assets/7.png",
-        "assets/8.png"
+        {
+          "src": "assets/4.png",
+          "title": "Account Profile & Management Overview",
+          "caption": "Profil akun resmi Instagram @jbzkabcirebon_ dan cakupan manajemen media sosial."
+        },
+        {
+          "src": "assets/5.png",
+          "title": "Instagram Story Series - Vol. 01",
+          "caption": "Desain Story: Hari Jadi Cirebon ke-654 & 541, Open Donasi #Z-Berbagi, dan Berbagi Takjil Ramadhan."
+        },
+        {
+          "src": "assets/6.png",
+          "title": "Instagram Story Series - Vol. 02",
+          "caption": "Desain Story: Open Recruitment Volunteer HYDBP, Dokumentasi Interview, dan Pengumuman Lolos Seleksi Berkas."
+        },
+        {
+          "src": "assets/7.png",
+          "title": "Instagram Story Series - Vol. 03",
+          "caption": "Desain Story: Upgrading & Sharing Session, Ucapan Ulang Tahun, First Gathering, dan Live Instagram Z-Talk."
+        },
+        {
+          "src": "assets/8.png",
+          "title": "Instagram Feed Publications - Vol. 04",
+          "caption": "Desain Feed: Pelantikan & Upgrading, Hari Tari Internasional, Open Volunteer Geberkahn, dan Taman Baca."
+        }
       ]
     },
     {
@@ -198,9 +218,21 @@ const portfolioData = {
       "description": "Visual identity, volunteer registration collateral, sponsorship story packages, and cultural philosophy feeds designed for the Bhakti Caruban program by Jabar Bergerak Zillenial.",
       "image": "assets/9.png",
       "gallery": [
-        "assets/9.png",
-        "assets/10.png",
-        "assets/11.png"
+        {
+          "src": "assets/9.png",
+          "title": "Account Profile & Program Identity",
+          "caption": "Profil akun @bhakticaruban dan identitas visual program Bhakti Caruban oleh Jabar Bergerak Zillenial."
+        },
+        {
+          "src": "assets/10.png",
+          "title": "Instagram Story Series - Vol. 01",
+          "caption": "Desain Story: Flyer HYDBP 2023, Pendaftaran Voluntrip, Perpanjangan Deadline, dan Calling Out Sponsor."
+        },
+        {
+          "src": "assets/11.png",
+          "title": "Instagram Feed Posts - Vol. 02",
+          "caption": "Desain Feed: Filosofi Bhakti Caruban, Calling Out Media Partner, dan Edukasi Budaya Cirebon."
+        }
       ]
     },
     {

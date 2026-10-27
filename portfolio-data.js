@@ -180,30 +180,30 @@ const portfolioData = {
       "period": "March 2023 - August 2025",
       "tools": ["Canva", "Social Media Management", "Copywriting", "Content Planning"],
       "description": "Comprehensive creative social media management for @jbzkabcirebon_, covering Instagram Story series, volunteer recruitment campaigns, community donation drives, and official Instagram feed publications.",
-      "image": "assets/4.png",
+      "image": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232807_0000.png",
       "gallery": [
         {
-          "src": "assets/4.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232807_0000.png",
           "title": "Account Profile & Management Overview",
           "caption": "Profil akun resmi Instagram @jbzkabcirebon_ dan cakupan manajemen media sosial."
         },
         {
-          "src": "assets/5.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0001.png",
           "title": "Instagram Story Series - Vol. 01",
           "caption": "Desain Story: Hari Jadi Cirebon ke-654 & 541, Open Donasi #Z-Berbagi, dan Berbagi Takjil Ramadhan."
         },
         {
-          "src": "assets/6.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0002.png",
           "title": "Instagram Story Series - Vol. 02",
           "caption": "Desain Story: Open Recruitment Volunteer HYDBP, Dokumentasi Interview, dan Pengumuman Lolos Seleksi Berkas."
         },
         {
-          "src": "assets/7.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0003.png",
           "title": "Instagram Story Series - Vol. 03",
           "caption": "Desain Story: Upgrading & Sharing Session, Ucapan Ulang Tahun, First Gathering, dan Live Instagram Z-Talk."
         },
         {
-          "src": "assets/8.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0004.png",
           "title": "Instagram Feed Publications - Vol. 04",
           "caption": "Desain Feed: Pelantikan & Upgrading, Hari Tari Internasional, Open Volunteer Geberkahn, dan Taman Baca."
         }
@@ -216,78 +216,93 @@ const portfolioData = {
       "period": "2023 - 2024",
       "tools": ["Canva", "Graphic Design", "Photography", "Videography"],
       "description": "Visual identity, volunteer registration collateral, sponsorship story packages, and cultural philosophy feeds designed for the Bhakti Caruban program by Jabar Bergerak Zillenial.",
-      "image": "assets/9.png",
+      "image": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0005.png",
       "gallery": [
         {
-          "src": "assets/9.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0005.png",
           "title": "Account Profile & Program Identity",
           "caption": "Profil akun @bhakticaruban dan identitas visual program Bhakti Caruban oleh Jabar Bergerak Zillenial."
         },
         {
-          "src": "assets/10.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0006.png",
           "title": "Instagram Story Series - Vol. 01",
           "caption": "Desain Story: Flyer HYDBP 2023, Pendaftaran Voluntrip, Perpanjangan Deadline, dan Calling Out Sponsor."
         },
         {
-          "src": "assets/11.png",
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0007.png",
           "title": "Instagram Feed Posts - Vol. 02",
           "caption": "Desain Feed: Filosofi Bhakti Caruban, Calling Out Media Partner, dan Edukasi Budaya Cirebon."
         }
       ]
     },
     {
-      "id": "project-social-media",
-      "title": "Social Media Marketing & Visual Branding",
-      "category": "Social Media",
-      "period": "March 2025 - Present",
-      "tools": ["Canva", "Adobe Illustrator", "Photoshop"],
-      "description": "Instagram feed and story design for brand identity (@rifegoods.co and culinary brands), optimizing follower engagement through visual storytelling.",
-      "image": "assets/page_5.png"
+      "id": "project-rifegoods",
+      "title": "Rife Goods (@rifegoods.co)",
+      "category": ["Social Media", "Graphic Design"],
+      "period": "March 2025 - April 2025",
+      "tools": ["Canva", "Adobe Photoshop", "Product Photography", "Copywriting"],
+      "description": "End-to-end creative visual branding and product photoshoot staging for hampers brand @rifegoods.co, including Instagram Story promotional packages, product catalog styling, and aesthetic Instagram feed designs.",
+      "image": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0008.png",
+      "gallery": [
+        {
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0008.png",
+          "title": "Account Profile & Brand Identity",
+          "caption": "Profil akun resmi Instagram @rifegoods.co dan cakupan visual marketing serta content creation."
+        },
+        {
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232808_0009.png",
+          "title": "Instagram Story & Photo Product - Vol. 01",
+          "caption": "Desain Story & Photo Product: Paket Hampers Ramadan (Casilda, Hawla, Elesa, Nastar, Kastengel, Choco Soes)."
+        },
+        {
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232809_0010.png",
+          "title": "Instagram Story & Photo Product - Vol. 02",
+          "caption": "Desain Story & Photo Product: Detail close-up toples kue kering Kastengel dan Nastar dengan dekorasi estetik."
+        },
+        {
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232809_0011.png",
+          "title": "Instagram Feed Posts & Catalog - Vol. 03",
+          "caption": "Desain Postingan Feeds & Katalog: Pre-order Hampers, What's Inside the Box, dan Detail Kemasan Hadiah."
+        }
+      ]
     },
     {
-      "id": "project-poster-sosial",
-      "title": "Public Advocacy & Awareness Posters",
-      "category": "Graphic Design",
-      "period": "2024 - 2025",
-      "tools": ["Canva", "Adobe Illustrator"],
-      "description": "Educational campaign poster series addressing public welfare and community awareness, featuring communicative typography and visuals.",
-      "image": "assets/page_6.png"
-    },
-    {
-      "id": "project-instagram-bkiaiane",
-      "title": "Institutional Social Media Content (@BKIAINE)",
-      "category": "Graphic Design",
-      "period": "2023 - 2024",
-      "tools": ["Canva", "Adobe Illustrator"],
-      "description": "Comprehensive digital content creation for academic organization feeds, multi-slide educational carousels, and promotional grids.",
-      "image": "assets/page_7.png"
+      "id": "project-wcc-mawar-balqis",
+      "title": "Woman Crisis Centre Mawar Balqis",
+      "category": ["Social Media", "Graphic Design"],
+      "period": "September 2025",
+      "tools": ["Canva", "Graphic Design", "Copywriting", "Video Editing"],
+      "description": "Educational digital campaign and social media content creation for @wccmawarbalqis_ and @ppl.wccmawarbalqis to raise public awareness on women and children protection, gender equality, and legal aid advocacy.",
+      "image": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232809_0012.png",
+      "gallery": [
+        {
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232809_0012.png",
+          "title": "Account Profile & Campaign Overview",
+          "caption": "Profil akun Instagram @ppl.wccmawarbalqis & @wccmawarbalqis_ serta cakupan publikasi advokasi sosial."
+        },
+        {
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232809_0013.png",
+          "title": "Instagram Reels Cover Design - Vol. 01",
+          "caption": "Desain Cover Reels Edukasi: Apa itu RBC, Tell Me Something, Live Report, Penyebab Kesenjangan Gender, dan Kekerasan Fisik."
+        },
+        {
+          "src": "assets/Salinan dari Simple Clean Artist Portfolio Presentation_20261027_232809_0014.png",
+          "title": "Instagram Feed Publications - Vol. 02",
+          "caption": "Desain Postingan Feeds: Pengenalan Tim (Kami Hadir), Jadwal Kegiatan Minggu Ke-2, Peta Lokasi, Tentang WCC, dan Hotline Pengaduan."
+        }
+      ]
     },
     {
       "id": "project-cover-cd-logo",
       "title": "Commercial Packaging & Brand Identity",
-      "category": "Cover & Logo",
+      "category": ["Packaging", "Graphic Design", "Cover & Logo"],
       "period": "March 2022",
       "tools": ["Adobe Photoshop", "Adobe Illustrator"],
-      "description": "Packaging cover design, commercial brand logo, and media assets for a traditional beverage brand.",
-      "image": "assets/page_8.png"
-    },
-    {
-      "id": "project-dino-abc",
-      "title": "Dino ABC Interactive Educational Media",
-      "category": "Interactive Media",
-      "period": "August 2021",
-      "tools": ["Adobe Illustrator", "PowerPoint"],
-      "description": "User interface design and custom visual assets for an interactive early childhood alphabet learning application.",
-      "image": "assets/page_9.png"
-    },
-    {
-      "id": "project-packaging-mockup",
-      "title": "Beverage Packaging Design & 3D Mockup",
-      "category": "Packaging",
-      "period": "2021",
-      "tools": ["Adobe Photoshop", "Canva"],
-      "description": "Commercial beverage can packaging concepts and realistic 3D mockups developed for creative entrepreneurship product development.",
-      "image": "assets/page_10.png"
+      "description": "Packaging cover design, commercial brand logo, and media assets for a traditional beverage brand validated in the vocational competency examination.",
+      "image": "assets/page_8.png",
+      "gallery": [
+        "assets/page_8.png"
+      ]
     }
   ]
 };

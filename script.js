@@ -449,6 +449,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightboxImg.src = imgSrc;
 
+    // Preload adjacent slides immediately for instant next/prev response
+    if (currentGallery.length > 1) {
+      const nextIdx = (currentSlideIndex + 1) % currentGallery.length;
+      const prevIdx = (currentSlideIndex - 1 + currentGallery.length) % currentGallery.length;
+      [nextIdx, prevIdx].forEach(idx => {
+        const item = currentGallery[idx];
+        const url = typeof item === 'string' ? item : item.src;
+        if (url) {
+          const pre = new Image();
+          pre.src = url;
+        }
+      });
+    }
+
     // Update slide specific subtitle badge in details
     const lightboxSlideSubtitle = document.getElementById('lightboxSlideSubtitle');
     if (lightboxSlideSubtitle) {
@@ -503,13 +517,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function nextSlide() {
-    if (currentGallery.length > 1) {
+    if (currentGallery && currentGallery.length > 1) {
       updateLightboxSlide(currentSlideIndex + 1, 'next');
     }
   }
 
   function prevSlide() {
-    if (currentGallery.length > 1) {
+    if (currentGallery && currentGallery.length > 1) {
       updateLightboxSlide(currentSlideIndex - 1, 'prev');
     }
   }
@@ -536,6 +550,15 @@ document.addEventListener('DOMContentLoaded', () => {
     currentGallery = (project.gallery && project.gallery.length > 0) ? project.gallery : [project.image];
     currentSlideIndex = 0;
     currentProjectDesc = project.description;
+
+    // Eagerly preload all images in gallery so switching slides is instant
+    currentGallery.forEach(item => {
+      const url = typeof item === 'string' ? item : item.src;
+      if (url) {
+        const pre = new Image();
+        pre.src = url;
+      }
+    });
 
     lightboxImg.alt = project.title;
     lightboxCategory.textContent = Array.isArray(project.category) ? project.category.join(' • ') : project.category;
@@ -580,7 +603,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 350);
   }
 
-  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxClose.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+  });
 
   lightboxModal.addEventListener('click', (e) => {
     if (e.target === lightboxModal) {
@@ -601,25 +627,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Touch Swipe for Mobile Gallery in Lightbox
+  // Touch Swipe & Tap for Mobile Gallery in Lightbox
   let touchStartX = 0;
+  let touchStartY = 0;
   let touchEndX = 0;
+  let touchEndY = 0;
+  let isSwiping = false;
+
   if (lightboxImageContainer) {
     lightboxImageContainer.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+      isSwiping = false;
+    }, { passive: true });
+
+    lightboxImageContainer.addEventListener('touchmove', (e) => {
+      const moveX = Math.abs(e.changedTouches[0].screenX - touchStartX);
+      const moveY = Math.abs(e.changedTouches[0].screenY - touchStartY);
+      if (moveX > 10 || moveY > 10) {
+        isSwiping = true;
+      }
     }, { passive: true });
 
     lightboxImageContainer.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      const swipeDistance = touchEndX - touchStartX;
-      if (Math.abs(swipeDistance) > 40) {
-        if (swipeDistance < 0) {
+      touchEndY = e.changedTouches[0].screenY;
+      const swipeDistanceX = touchEndX - touchStartX;
+      const swipeDistanceY = touchEndY - touchStartY;
+      
+      // Horizontal swipe threshold: at least 35px, and predominantly horizontal
+      if (Math.abs(swipeDistanceX) > 35 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY) * 1.3) {
+        if (swipeDistanceX < 0) {
           nextSlide();
         } else {
           prevSlide();
         }
       }
     }, { passive: true });
+
+    // Tap on image left/right half to advance/rewind slides (like story navigation)
+    lightboxImageContainer.addEventListener('click', (e) => {
+      if (isSwiping) return;
+      if (e.target.closest('.lightbox-nav-btn') || e.target.closest('.lightbox-bottom-bar')) {
+        return;
+      }
+      if (!currentGallery || currentGallery.length <= 1) return;
+
+      const rect = lightboxImageContainer.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      if (clickX > rect.width * 0.65) {
+        nextSlide();
+      } else if (clickX < rect.width * 0.35) {
+        prevSlide();
+      }
+    });
   }
 
   // --- Skill Bar Animation ---

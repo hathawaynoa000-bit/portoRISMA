@@ -1299,6 +1299,7 @@ body.dark-theme .soft-skill-tag {
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
+  padding: 8px 4px;
   margin-bottom: 50px;
 }
 
@@ -2629,9 +2630,9 @@ body.dark-theme .footer {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 12px;
-    margin-bottom: 30px;
-    gap: 8px;
+    padding: 10px 18px 14px 4px; /* Generous top padding prevents translateY & shadow clipping */
+    margin-bottom: 25px;
+    gap: 10px;
     scrollbar-width: none;
   }
   .project-filters::-webkit-scrollbar {
@@ -2639,8 +2640,11 @@ body.dark-theme .footer {
   }
   .filter-btn {
     white-space: nowrap;
-    padding: 8px 16px;
+    padding: 8px 18px;
     font-size: 0.82rem;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    transform: translateY(-1px);
   }
 
   .projects-grid {
